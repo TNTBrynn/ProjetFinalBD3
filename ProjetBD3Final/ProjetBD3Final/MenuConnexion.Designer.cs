@@ -39,9 +39,10 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(255, 123);
+            this.btnCancel.Location = new System.Drawing.Point(340, 151);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(181, 27);
+            this.btnCancel.Size = new System.Drawing.Size(241, 33);
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Annuler";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@
             // btnConnexion
             // 
             this.btnConnexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConnexion.Location = new System.Drawing.Point(14, 123);
+            this.btnConnexion.Location = new System.Drawing.Point(19, 151);
+            this.btnConnexion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConnexion.Name = "btnConnexion";
-            this.btnConnexion.Size = new System.Drawing.Size(181, 27);
+            this.btnConnexion.Size = new System.Drawing.Size(241, 33);
             this.btnConnexion.TabIndex = 10;
             this.btnConnexion.Text = "Connexion";
             this.btnConnexion.UseVisualStyleBackColor = true;
@@ -61,18 +63,20 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(65, 68);
+            this.label2.Location = new System.Drawing.Point(87, 84);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 20);
+            this.label2.Size = new System.Drawing.Size(136, 25);
             this.label2.TabIndex = 9;
             this.label2.Text = "Mot de passe:";
             // 
             // tbMDP
             // 
             this.tbMDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMDP.Location = new System.Drawing.Point(255, 65);
+            this.tbMDP.Location = new System.Drawing.Point(340, 80);
+            this.tbMDP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbMDP.Name = "tbMDP";
-            this.tbMDP.Size = new System.Drawing.Size(160, 26);
+            this.tbMDP.Size = new System.Drawing.Size(212, 30);
             this.tbMDP.TabIndex = 8;
             this.tbMDP.Text = "Password1";
             // 
@@ -80,32 +84,36 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(65, 17);
+            this.label1.Location = new System.Drawing.Point(87, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 20);
+            this.label1.Size = new System.Drawing.Size(161, 25);
             this.label1.TabIndex = 7;
             this.label1.Text = "Nom d\'utilisateur:";
             // 
             // tbNomUtilisateur
             // 
             this.tbNomUtilisateur.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNomUtilisateur.Location = new System.Drawing.Point(255, 14);
+            this.tbNomUtilisateur.Location = new System.Drawing.Point(340, 17);
+            this.tbNomUtilisateur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbNomUtilisateur.Name = "tbNomUtilisateur";
-            this.tbNomUtilisateur.Size = new System.Drawing.Size(160, 26);
+            this.tbNomUtilisateur.Size = new System.Drawing.Size(212, 30);
             this.tbNomUtilisateur.TabIndex = 6;
-            this.tbNomUtilisateur.Text = "adminAbdou";
+            this.tbNomUtilisateur.Text = "1";
+            this.tbNomUtilisateur.TextChanged += new System.EventHandler(this.tbNomUtilisateur_TextChanged);
             // 
             // MenuConnexion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 187);
+            this.ClientSize = new System.Drawing.Size(632, 230);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConnexion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbMDP);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbNomUtilisateur);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MenuConnexion";
             this.Text = "Form1";
             this.ResumeLayout(false);

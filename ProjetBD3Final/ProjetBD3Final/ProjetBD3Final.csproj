@@ -46,6 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDB56Projet2GSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDB56Projet2GSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GestionEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionEmp.Designer.cs">
+      <DependentUpon>GestionEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAdministrateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuAdministrateur.Designer.cs">
+      <DependentUpon>MenuAdministrateur.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +71,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GestionEmp.resx">
+      <DependentUpon>GestionEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAdministrateur.resx">
+      <DependentUpon>MenuAdministrateur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuConnexion.resx">
       <DependentUpon>MenuConnexion.cs</DependentUpon>
     </EmbeddedResource>
@@ -66,6 +89,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="BDB56Projet2GSDataSet.xsc">
+      <DependentUpon>BDB56Projet2GSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BDB56Projet2GSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDB56Projet2GSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDB56Projet2GSDataSet.xss">
+      <DependentUpon>BDB56Projet2GSDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -50,12 +50,55 @@ namespace ProjetBD3Final
 
             if (idTypeUtilisateur == 1)
             {
+                MenuAdministrateur menuAdmin = new MenuAdministrateur(idUtilisateur);
+                this.Hide();
+                menuAdmin.FormClosed += (s, args) => this.Show();
+                menuAdmin.Show();
+            }
+        }
 
-                MessageBox.Show("Menu Admin s'ouvre  NOT YET IMPLEMENTED" +" type: " +  idTypeUtilisateur  + " No:" + idUtilisateur);
-                //MenuAdministrateur menuAdmin = new MenuAdministrateur(idUtilisateur);
-                //Ouvrir le menu de l'administrateur
-                //this.Hide();
-                //FormManager.Instance.MenuAdministrateur(idUtilisateur).Show();
+        private void tbNomUtilisateur_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+
+    internal class FormManager
+    {
+        private static FormManager instance = null;
+        private MenuAdministrateur menuAdministrateur { get; set; }
+        private GestionEmp gestionEmp { get; set; }
+
+        private FormManager() { }
+
+        public MenuAdministrateur MenuAdministrateur(int currentUserId)
+        {
+            if (menuAdministrateur == null || menuAdministrateur.IsDisposed)
+            {
+                menuAdministrateur = new MenuAdministrateur(currentUserId);
+            }
+            return menuAdministrateur;
+
+        }
+
+        public GestionEmp GestionEmp(int currentUserId)
+        {
+            if (gestionEmp == null || gestionEmp.IsDisposed)
+            {
+                gestionEmp = new GestionEmp(currentUserId);
+            }
+            return gestionEmp;
+        }
+
+        public static FormManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new FormManager();
+                }
+                return instance;
             }
         }
     }
