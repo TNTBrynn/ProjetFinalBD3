@@ -40,7 +40,7 @@ namespace ProjetBD3Final
         {
             AjoutEmp ajoutEmp = new AjoutEmp();
             this.Hide();
-            ajoutEmp.FormClosed += (s, args) => this.Show();
+            ajoutEmp.FormClosed += (s, args) => this.Show(); this.employesTableAdapter.Fill(this.bDB56Projet2GSDataSet.Employes); ;
             ajoutEmp.Show();
         }
 
@@ -56,10 +56,46 @@ namespace ProjetBD3Final
                 int selectedEmployeeNo = (int)dgEmployes.SelectedRows[0].Cells["No"].Value;
                 ModifEmp modifEmpForm = new ModifEmp(selectedEmployeeNo);
                 modifEmpForm.ShowDialog();
+                this.employesTableAdapter.Fill(this.bDB56Projet2GSDataSet.Employes);
             }
             else
             {
                 MessageBox.Show("Veuillez sélectionner un employé à modifier.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSuppr_Click(object sender, EventArgs e)
+        {
+            if (dgEmployes.SelectedRows.Count > 0)
+            {
+                int selectedEmployeeNo = (int)dgEmployes.SelectedRows[0].Cells["No"].Value;
+
+                if (selectedEmployeeNo == 1)
+                {
+                    MessageBox.Show("L'administrateur ne peut pas être supprimer.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                var result = MessageBox.Show("Voulez-vous vraiment supprimer cet employé?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    using (var db = new BDB56Projet2GSDataContext("Data Source=tcp:424sql.cgodin.qc.ca,5433;Initial Catalog=BDB56Projet2GS;Persist Security Info=True;User ID=B56Projet2GS;Password=Password1;TrustServerCertificate=True"))
+                    {
+                        var employee = db.Employes.SingleOrDefault(emp => emp.No == selectedEmployeeNo);
+                        if (employee != null)
+                        {
+                            db.Employes.DeleteOnSubmit(employee);
+                            db.SubmitChanges();
+                            MessageBox.Show("Employé supprimer avec succès", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.employesTableAdapter.Fill(this.bDB56Projet2GSDataSet.Employes);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Sélectionner un employé à supprimer.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

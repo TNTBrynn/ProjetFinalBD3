@@ -45,10 +45,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.dgEmployes = new System.Windows.Forms.DataGridView();
-            this.btnAjout = new System.Windows.Forms.Button();
-            this.btnModif = new System.Windows.Forms.Button();
-            this.btnSuppr = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +62,10 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAjout = new System.Windows.Forms.Button();
+            this.btnModif = new System.Windows.Forms.Button();
+            this.btnSuppr = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bDB56Projet2GSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingNavigator)).BeginInit();
@@ -234,45 +234,6 @@
             this.dgEmployes.Size = new System.Drawing.Size(1300, 315);
             this.dgEmployes.TabIndex = 1;
             // 
-            // btnAjout
-            // 
-            this.btnAjout.Location = new System.Drawing.Point(237, 377);
-            this.btnAjout.Name = "btnAjout";
-            this.btnAjout.Size = new System.Drawing.Size(119, 45);
-            this.btnAjout.TabIndex = 2;
-            this.btnAjout.Text = "Ajouter un employé";
-            this.btnAjout.UseVisualStyleBackColor = true;
-            this.btnAjout.Click += new System.EventHandler(this.btnAjout_Click);
-            // 
-            // btnModif
-            // 
-            this.btnModif.Location = new System.Drawing.Point(596, 377);
-            this.btnModif.Name = "btnModif";
-            this.btnModif.Size = new System.Drawing.Size(119, 45);
-            this.btnModif.TabIndex = 3;
-            this.btnModif.Text = "Modifier l\'employé";
-            this.btnModif.UseVisualStyleBackColor = true;
-            this.btnModif.Click += new System.EventHandler(this.btnModif_Click);
-            // 
-            // btnSuppr
-            // 
-            this.btnSuppr.Location = new System.Drawing.Point(983, 377);
-            this.btnSuppr.Name = "btnSuppr";
-            this.btnSuppr.Size = new System.Drawing.Size(119, 45);
-            this.btnSuppr.TabIndex = 4;
-            this.btnSuppr.Text = "Supprimer un employé";
-            this.btnSuppr.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1245, 400);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 38);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Retour";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // No
             // 
             this.No.DataPropertyName = "No";
@@ -391,6 +352,46 @@
             this.dataGridViewTextBoxColumn17.HeaderText = "Remarque";
             this.dataGridViewTextBoxColumn17.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // 
+            // btnAjout
+            // 
+            this.btnAjout.Location = new System.Drawing.Point(237, 377);
+            this.btnAjout.Name = "btnAjout";
+            this.btnAjout.Size = new System.Drawing.Size(119, 45);
+            this.btnAjout.TabIndex = 2;
+            this.btnAjout.Text = "Ajouter un employé";
+            this.btnAjout.UseVisualStyleBackColor = true;
+            this.btnAjout.Click += new System.EventHandler(this.btnAjout_Click);
+            // 
+            // btnModif
+            // 
+            this.btnModif.Location = new System.Drawing.Point(596, 377);
+            this.btnModif.Name = "btnModif";
+            this.btnModif.Size = new System.Drawing.Size(119, 45);
+            this.btnModif.TabIndex = 3;
+            this.btnModif.Text = "Modifier l\'employé";
+            this.btnModif.UseVisualStyleBackColor = true;
+            this.btnModif.Click += new System.EventHandler(this.btnModif_Click);
+            // 
+            // btnSuppr
+            // 
+            this.btnSuppr.Location = new System.Drawing.Point(983, 377);
+            this.btnSuppr.Name = "btnSuppr";
+            this.btnSuppr.Size = new System.Drawing.Size(119, 45);
+            this.btnSuppr.TabIndex = 4;
+            this.btnSuppr.Text = "Supprimer un employé";
+            this.btnSuppr.UseVisualStyleBackColor = true;
+            this.btnSuppr.Click += new System.EventHandler(this.btnSuppr_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1245, 400);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(105, 38);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Retour";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // GestionEmp
             // 

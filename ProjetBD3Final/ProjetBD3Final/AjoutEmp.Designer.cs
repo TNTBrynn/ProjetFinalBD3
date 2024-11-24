@@ -417,7 +417,6 @@
             this.tbCode.Mask = ">A0A 0A0";
             this.tbCode.Name = "tbCode";
             this.tbCode.PromptChar = ' ';
-            this.tbCode.ReadOnly = true;
             this.tbCode.Size = new System.Drawing.Size(100, 22);
             this.tbCode.TabIndex = 40;
             this.tbCode.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
