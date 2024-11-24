@@ -48,5 +48,19 @@ namespace ProjetBD3Final
         {
             this.Close();
         }
+
+        private void btnModif_Click(object sender, EventArgs e)
+        {
+            if (dgEmployes.SelectedRows.Count > 0)
+            {
+                int selectedEmployeeNo = (int)dgEmployes.SelectedRows[0].Cells["No"].Value;
+                ModifEmp modifEmpForm = new ModifEmp(selectedEmployeeNo);
+                modifEmpForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Veuillez sélectionner un employé à modifier.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

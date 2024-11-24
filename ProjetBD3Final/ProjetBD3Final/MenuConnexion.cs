@@ -61,6 +61,11 @@ namespace ProjetBD3Final
         {
 
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
     internal class FormManager

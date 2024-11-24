@@ -1,98 +1,54 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjetBD3Final
 {
-    public partial class AjoutEmp : Form
+    public partial class ModifEmp : Form
     {
-        public AjoutEmp()
+        private int employeeNo;
+        public ModifEmp(int employeeNo)
         {
             InitializeComponent();
-            this.Load += new EventHandler(EmployeeForm_Load);
+            this.employeeNo = employeeNo;
+            this.Load += new EventHandler(ModifEmp_Load);
         }
 
-        private void EmployeeForm_Load(object sender, EventArgs e)
-        {
-            foreach (Control control in this.Controls)
-            {
-                if (control is TextBox)
-                {
-                    ((TextBox)control).Clear();
-                }
-            }
-        }
-
-        private void employesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.employesBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDB56Projet2GSDataSet);
-        }
-
-        private void AjoutEmp_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'bDB56Projet2GSDataSet.Employes' table. You can move, or remove it, as needed.
-            this.employesTableAdapter.Fill(this.bDB56Projet2GSDataSet.Employes);
-        }
-
-        private void noTypeEmployeTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAjout_Click(object sender, EventArgs e)
+        private void ModifEmp_Load(object sender, EventArgs e)
         {
             // Validate input fields
-            string validationMessage;
-            if (!ValidateFields(out validationMessage))
-            {
-                MessageBox.Show(validationMessage, "Erreur de validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            
 
             using (var db = new BDB56Projet2GSDataContext("Data Source=tcp:424sql.cgodin.qc.ca,5433;Initial Catalog=BDB56Projet2GS;Persist Security Info=True;User ID=B56Projet2GS;Password=Password1;TrustServerCertificate=True"))
             {
-                // Get the next employee number
-                int nextNo = db.Employes.Max(emp => emp.No) + 1;
-
-                string phone = new string(tbTel.Text.Where(char.IsDigit).ToArray());
-                string cellphone = new string(tbCell.Text.Where(char.IsDigit).ToArray());
-
-                string input = tbCode.Text;
-                string result = input.Replace(" ", "");
-
-                // Create a new employee
-                var newEmployee = new Employes
+                var employee = db.Employes.SingleOrDefault(emp => emp.No == employeeNo);
+                if (employee != null)
                 {
-                    No = nextNo,
-                    MotDePasse = tbMdp.Text,
-                    Nom = tbNom.Text,
-                    Prenom = tbPrenom.Text,
-                    Sexe = tbSexe.Text,
-                    Age = int.Parse(tbAge.Text),
-                    NoCivique = int.Parse(tbNoCiv.Text),
-                    Rue = tbRue.Text,
-                    Ville = tbVille.Text,
-                    IdProvince = tbProvince.Text,
-                    CodePostal = result,
-                    Telephone = phone,
-                    Cellulaire = cellphone,
-                    Courriel = tbCourriel.Text,
-                    SalaireHoraire = decimal.Parse(tbSalaire.Text),
-                    NoTypeEmploye = 2,
-                    Remarque = tbRemarque.Text
-                };
-
-                db.Employes.InsertOnSubmit(newEmployee);
-                db.SubmitChanges();
-
-                MessageBox.Show("Employé ajouté avec succès", "Confirmation d'ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                    tbMdp.Text = employee.MotDePasse;
+                    tbNom.Text = employee.Nom;
+                    tbPrenom.Text = employee.Prenom;
+                    tbSexe.Text = employee.Sexe;
+                    tbAge.Text = employee.Age.ToString();
+                    tbNoCiv.Text = employee.NoCivique.ToString();
+                    tbRue.Text = employee.Rue;
+                    tbVille.Text = employee.Ville;
+                    tbProvince.Text = employee.IdProvince;
+                    tbCode.Text = employee.CodePostal;
+                    tbTel.Text = employee.Telephone;
+                    tbCell.Text = employee.Cellulaire;
+                    tbCourriel.Text = employee.Courriel;
+                    tbSalaire.Text = employee.SalaireHoraire.ToString();
+                    tbRemarque.Text = employee.Remarque;
+                }
             }
         }
-
         private bool ValidateFields(out string validationMessage)
         {
             // Validate tbMdp
@@ -198,22 +154,59 @@ namespace ProjetBD3Final
             return true;
         }
 
-        private void tbSalaire_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            string validationMessage;
+            if (!ValidateFields(out validationMessage))
+            {
+                MessageBox.Show(validationMessage, "Erreur de validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            using (var db = new BDB56Projet2GSDataContext("Data Source=tcp:424sql.cgodin.qc.ca,5433;Initial Catalog=BDB56Projet2GS;Persist Security Info=True;User ID=B56Projet2GS;Password=Password1;TrustServerCertificate=True"))
+            {
+                var employee = db.Employes.SingleOrDefault(emp => emp.No == employeeNo);
+                if (employee != null)
+                {
+                    employee.MotDePasse = tbMdp.Text;
+                    employee.Nom = tbNom.Text;
+                    employee.Prenom = tbPrenom.Text;
+                    employee.Sexe = tbSexe.Text;
+                    employee.Age = int.Parse(tbAge.Text);
+                    employee.NoCivique = int.Parse(tbNoCiv.Text);
+                    employee.Rue = tbRue.Text;
+                    employee.Ville = tbVille.Text;
+                    employee.IdProvince = tbProvince.Text;
+                    employee.CodePostal = tbCode.Text.Replace(" ", "");
+                    employee.Telephone = new string(tbTel.Text.Where(char.IsDigit).ToArray());
+                    employee.Cellulaire = new string(tbCell.Text.Where(char.IsDigit).ToArray());
+                    employee.Courriel = tbCourriel.Text;
+                    employee.SalaireHoraire = decimal.Parse(tbSalaire.Text);
+                    employee.Remarque = tbRemarque.Text;
+
+                    db.SubmitChanges();
+                    MessageBox.Show("Employé modifié avec succès", "Confirmation de la modification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+            }
+        }
+
+        private void employesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.employesBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.bDB56Projet2GSDataSet);
 
         }
 
-        private void tbProvince_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void ModifEmp_Load_1(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bDB56Projet2GSDataSet.Employes' table. You can move, or remove it, as needed.
+            this.employesTableAdapter.Fill(this.bDB56Projet2GSDataSet.Employes);
 
         }
 
-        private void tbVille_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRetour_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
