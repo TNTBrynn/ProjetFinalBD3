@@ -35,5 +35,18 @@ namespace ProjetBD3Final
             this.tableAdapterManager.UpdateAll(this.bDB56Projet2GSDataSet);
 
         }
+
+        private void btnAjout_Click(object sender, EventArgs e)
+        {
+            AjoutEmp ajoutEmp = new AjoutEmp();
+            this.Hide();
+            ajoutEmp.FormClosed += (s, args) => this.Show();
+            ajoutEmp.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
