@@ -33,5 +33,13 @@ namespace ProjetBD3Final
             gestionEmp.FormClosed += (s, args) => this.Show();
             gestionEmp.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            GestionPrix gestionPrix = new GestionPrix();
+            this.Hide();
+            gestionPrix.FormClosed += (s, args) => this.Show();
+            gestionPrix.Show();
+        }
     }
 }

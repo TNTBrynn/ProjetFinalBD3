@@ -66,6 +66,12 @@
     <Compile Include="GestionEmp.Designer.cs">
       <DependentUpon>GestionEmp.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionPrix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionPrix.Designer.cs">
+      <DependentUpon>GestionPrix.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuAdministrateur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionEmp.resx">
       <DependentUpon>GestionEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionPrix.resx">
+      <DependentUpon>GestionPrix.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAdministrateur.resx">
       <DependentUpon>MenuAdministrateur.cs</DependentUpon>

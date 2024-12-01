@@ -48,6 +48,8 @@ namespace ProjetBD3Final {
         
         private TypesEmployeDataTable tableTypesEmploye;
         
+        private dtTypeEtPrixDepensesAbonnementsDataTable tabledtTypeEtPrixDepensesAbonnements;
+        
         private global::System.Data.DataRelation relationFK__Abonnemen__IdPro__4316F928;
         
         private global::System.Data.DataRelation relationFK__Abonnemen__NoTyp__440B1D61;
@@ -135,6 +137,9 @@ namespace ProjetBD3Final {
                 }
                 if ((ds.Tables["TypesEmploye"] != null)) {
                     base.Tables.Add(new TypesEmployeDataTable(ds.Tables["TypesEmploye"]));
+                }
+                if ((ds.Tables["dtTypeEtPrixDepensesAbonnements"] != null)) {
+                    base.Tables.Add(new dtTypeEtPrixDepensesAbonnementsDataTable(ds.Tables["dtTypeEtPrixDepensesAbonnements"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -276,6 +281,16 @@ namespace ProjetBD3Final {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public dtTypeEtPrixDepensesAbonnementsDataTable dtTypeEtPrixDepensesAbonnements {
+            get {
+                return this.tabledtTypeEtPrixDepensesAbonnements;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -376,6 +391,9 @@ namespace ProjetBD3Final {
                 }
                 if ((ds.Tables["TypesEmploye"] != null)) {
                     base.Tables.Add(new TypesEmployeDataTable(ds.Tables["TypesEmploye"]));
+                }
+                if ((ds.Tables["dtTypeEtPrixDepensesAbonnements"] != null)) {
+                    base.Tables.Add(new dtTypeEtPrixDepensesAbonnementsDataTable(ds.Tables["dtTypeEtPrixDepensesAbonnements"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -482,6 +500,12 @@ namespace ProjetBD3Final {
                     this.tableTypesEmploye.InitVars();
                 }
             }
+            this.tabledtTypeEtPrixDepensesAbonnements = ((dtTypeEtPrixDepensesAbonnementsDataTable)(base.Tables["dtTypeEtPrixDepensesAbonnements"]));
+            if ((initTable == true)) {
+                if ((this.tabledtTypeEtPrixDepensesAbonnements != null)) {
+                    this.tabledtTypeEtPrixDepensesAbonnements.InitVars();
+                }
+            }
             this.relationFK__Abonnemen__IdPro__4316F928 = this.Relations["FK__Abonnemen__IdPro__4316F928"];
             this.relationFK__Abonnemen__NoTyp__440B1D61 = this.Relations["FK__Abonnemen__NoTyp__440B1D61"];
             this.relationFK__Dependant__IdAbo__47DBAE45 = this.Relations["FK__Dependant__IdAbo__47DBAE45"];
@@ -528,6 +552,8 @@ namespace ProjetBD3Final {
             base.Tables.Add(this.tableTypesAbonnement);
             this.tableTypesEmploye = new TypesEmployeDataTable();
             base.Tables.Add(this.tableTypesEmploye);
+            this.tabledtTypeEtPrixDepensesAbonnements = new dtTypeEtPrixDepensesAbonnementsDataTable();
+            base.Tables.Add(this.tabledtTypeEtPrixDepensesAbonnements);
             this.relationFK__Abonnemen__IdPro__4316F928 = new global::System.Data.DataRelation("FK__Abonnemen__IdPro__4316F928", new global::System.Data.DataColumn[] {
                         this.tableProvinces.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableAbonnements.IdProvinceColumn}, false);
@@ -652,6 +678,12 @@ namespace ProjetBD3Final {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializedtTypeEtPrixDepensesAbonnements() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -740,6 +772,9 @@ namespace ProjetBD3Final {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void TypesEmployeRowChangeEventHandler(object sender, TypesEmployeRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void dtTypeEtPrixDepensesAbonnementsRowChangeEventHandler(object sender, dtTypeEtPrixDepensesAbonnementsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4922,6 +4957,285 @@ namespace ProjetBD3Final {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class dtTypeEtPrixDepensesAbonnementsDataTable : global::System.Data.TypedTableBase<dtTypeEtPrixDepensesAbonnementsRow> {
+            
+            private global::System.Data.DataColumn columnDescription;
+            
+            private global::System.Data.DataColumn columnPrix;
+            
+            private global::System.Data.DataColumn columnDepensesObligatoires;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dtTypeEtPrixDepensesAbonnementsDataTable() {
+                this.TableName = "dtTypeEtPrixDepensesAbonnements";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal dtTypeEtPrixDepensesAbonnementsDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected dtTypeEtPrixDepensesAbonnementsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DescriptionColumn {
+                get {
+                    return this.columnDescription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PrixColumn {
+                get {
+                    return this.columnPrix;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DepensesObligatoiresColumn {
+                get {
+                    return this.columnDepensesObligatoires;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dtTypeEtPrixDepensesAbonnementsRow this[int index] {
+                get {
+                    return ((dtTypeEtPrixDepensesAbonnementsRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event dtTypeEtPrixDepensesAbonnementsRowChangeEventHandler dtTypeEtPrixDepensesAbonnementsRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event dtTypeEtPrixDepensesAbonnementsRowChangeEventHandler dtTypeEtPrixDepensesAbonnementsRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event dtTypeEtPrixDepensesAbonnementsRowChangeEventHandler dtTypeEtPrixDepensesAbonnementsRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event dtTypeEtPrixDepensesAbonnementsRowChangeEventHandler dtTypeEtPrixDepensesAbonnementsRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AdddtTypeEtPrixDepensesAbonnementsRow(dtTypeEtPrixDepensesAbonnementsRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dtTypeEtPrixDepensesAbonnementsRow AdddtTypeEtPrixDepensesAbonnementsRow(string Description, decimal Prix, decimal DepensesObligatoires) {
+                dtTypeEtPrixDepensesAbonnementsRow rowdtTypeEtPrixDepensesAbonnementsRow = ((dtTypeEtPrixDepensesAbonnementsRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Description,
+                        Prix,
+                        DepensesObligatoires};
+                rowdtTypeEtPrixDepensesAbonnementsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdtTypeEtPrixDepensesAbonnementsRow);
+                return rowdtTypeEtPrixDepensesAbonnementsRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                dtTypeEtPrixDepensesAbonnementsDataTable cln = ((dtTypeEtPrixDepensesAbonnementsDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new dtTypeEtPrixDepensesAbonnementsDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnDescription = base.Columns["Description"];
+                this.columnPrix = base.Columns["Prix"];
+                this.columnDepensesObligatoires = base.Columns["DepensesObligatoires"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescription);
+                this.columnPrix = new global::System.Data.DataColumn("Prix", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrix);
+                this.columnDepensesObligatoires = new global::System.Data.DataColumn("DepensesObligatoires", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDepensesObligatoires);
+                this.columnDescription.AllowDBNull = false;
+                this.columnDescription.MaxLength = 100;
+                this.columnPrix.AllowDBNull = false;
+                this.columnDepensesObligatoires.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dtTypeEtPrixDepensesAbonnementsRow NewdtTypeEtPrixDepensesAbonnementsRow() {
+                return ((dtTypeEtPrixDepensesAbonnementsRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new dtTypeEtPrixDepensesAbonnementsRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(dtTypeEtPrixDepensesAbonnementsRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.dtTypeEtPrixDepensesAbonnementsRowChanged != null)) {
+                    this.dtTypeEtPrixDepensesAbonnementsRowChanged(this, new dtTypeEtPrixDepensesAbonnementsRowChangeEvent(((dtTypeEtPrixDepensesAbonnementsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.dtTypeEtPrixDepensesAbonnementsRowChanging != null)) {
+                    this.dtTypeEtPrixDepensesAbonnementsRowChanging(this, new dtTypeEtPrixDepensesAbonnementsRowChangeEvent(((dtTypeEtPrixDepensesAbonnementsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.dtTypeEtPrixDepensesAbonnementsRowDeleted != null)) {
+                    this.dtTypeEtPrixDepensesAbonnementsRowDeleted(this, new dtTypeEtPrixDepensesAbonnementsRowChangeEvent(((dtTypeEtPrixDepensesAbonnementsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.dtTypeEtPrixDepensesAbonnementsRowDeleting != null)) {
+                    this.dtTypeEtPrixDepensesAbonnementsRowDeleting(this, new dtTypeEtPrixDepensesAbonnementsRowChangeEvent(((dtTypeEtPrixDepensesAbonnementsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemovedtTypeEtPrixDepensesAbonnementsRow(dtTypeEtPrixDepensesAbonnementsRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                BDB56Projet2GSDataSet ds = new BDB56Projet2GSDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "dtTypeEtPrixDepensesAbonnementsDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class AbonnementsRow : global::System.Data.DataRow {
@@ -6451,6 +6765,54 @@ namespace ProjetBD3Final {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class dtTypeEtPrixDepensesAbonnementsRow : global::System.Data.DataRow {
+            
+            private dtTypeEtPrixDepensesAbonnementsDataTable tabledtTypeEtPrixDepensesAbonnements;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal dtTypeEtPrixDepensesAbonnementsRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabledtTypeEtPrixDepensesAbonnements = ((dtTypeEtPrixDepensesAbonnementsDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Description {
+                get {
+                    return ((string)(this[this.tabledtTypeEtPrixDepensesAbonnements.DescriptionColumn]));
+                }
+                set {
+                    this[this.tabledtTypeEtPrixDepensesAbonnements.DescriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Prix {
+                get {
+                    return ((decimal)(this[this.tabledtTypeEtPrixDepensesAbonnements.PrixColumn]));
+                }
+                set {
+                    this[this.tabledtTypeEtPrixDepensesAbonnements.PrixColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal DepensesObligatoires {
+                get {
+                    return ((decimal)(this[this.tabledtTypeEtPrixDepensesAbonnements.DepensesObligatoiresColumn]));
+                }
+                set {
+                    this[this.tabledtTypeEtPrixDepensesAbonnements.DepensesObligatoiresColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -6844,6 +7206,40 @@ namespace ProjetBD3Final {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TypesEmployeRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class dtTypeEtPrixDepensesAbonnementsRowChangeEvent : global::System.EventArgs {
+            
+            private dtTypeEtPrixDepensesAbonnementsRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dtTypeEtPrixDepensesAbonnementsRowChangeEvent(dtTypeEtPrixDepensesAbonnementsRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dtTypeEtPrixDepensesAbonnementsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -11943,6 +12339,178 @@ SELECT No, Nom, NombreTrous, Description, Remarque FROM Terrains WHERE (No = @No
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string Description, string Remarque, int Original_No, string Original_Description) {
             return this.Update(Original_No, Description, Remarque, Original_No, Original_Description);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class dtTypeEtPrixDepensesAbonnementsTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public dtTypeEtPrixDepensesAbonnementsTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "dtTypeEtPrixDepensesAbonnements";
+            tableMapping.ColumnMappings.Add("Description", "Description");
+            tableMapping.ColumnMappings.Add("Prix", "Prix");
+            tableMapping.ColumnMappings.Add("DepensesObligatoires", "DepensesObligatoires");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ProjetBD3Final.Properties.Settings.Default.BDB56Projet2GSConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT TypesAbonnement.Description, PrixDepensesAbonnements.Prix, PrixDepensesAbo" +
+                "nnements.DepensesObligatoires\r\nFROM     PrixDepensesAbonnements INNER JOIN\r\n    " +
+                "              TypesAbonnement ON PrixDepensesAbonnements.NoTypeAbonnement = Type" +
+                "sAbonnement.No";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(BDB56Projet2GSDataSet.dtTypeEtPrixDepensesAbonnementsDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual BDB56Projet2GSDataSet.dtTypeEtPrixDepensesAbonnementsDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            BDB56Projet2GSDataSet.dtTypeEtPrixDepensesAbonnementsDataTable dataTable = new BDB56Projet2GSDataSet.dtTypeEtPrixDepensesAbonnementsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     
