@@ -102,6 +102,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Abonnement.resx">
+      <DependentUpon>Abonnement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AjoutEmp.resx">
       <DependentUpon>AjoutEmp.cs</DependentUpon>
     </EmbeddedResource>
