@@ -70,7 +70,7 @@ namespace ProjetBD3Final
                     MotDePasse = tbMdp.Text,
                     Nom = tbNom.Text,
                     Prenom = tbPrenom.Text,
-                    Sexe = tbSexe.Text,
+                    Sexe = Convert.ToChar(tbSexe.Text),
                     Age = int.Parse(tbAge.Text),
                     NoCivique = int.Parse(tbNoCiv.Text),
                     Rue = tbRue.Text,

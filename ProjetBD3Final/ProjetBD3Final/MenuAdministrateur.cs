@@ -41,5 +41,13 @@ namespace ProjetBD3Final
             gestionPrix.FormClosed += (s, args) => this.Show();
             gestionPrix.Show();
         }
+
+        private void btnAbonnement_Click(object sender, EventArgs e)
+        {
+            Abonnement abonnement = new Abonnement();
+            this.Hide();
+            abonnement.FormClosed += (s, args) => this.Show();
+            abonnement.Show();
+        }
     }
 }
