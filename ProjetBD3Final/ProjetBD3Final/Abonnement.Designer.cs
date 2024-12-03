@@ -138,7 +138,7 @@
             this.tbNom.Location = new System.Drawing.Point(149, 62);
             this.tbNom.Name = "tbNom";
             this.tbNom.Size = new System.Drawing.Size(200, 20);
-            this.tbNom.TabIndex = 6;
+            this.tbNom.TabIndex = 1;
             // 
             // prenomLabel
             // 
@@ -155,7 +155,7 @@
             this.tbPrenom.Location = new System.Drawing.Point(149, 88);
             this.tbPrenom.Name = "tbPrenom";
             this.tbPrenom.Size = new System.Drawing.Size(200, 20);
-            this.tbPrenom.TabIndex = 8;
+            this.tbPrenom.TabIndex = 2;
             // 
             // sexeLabel
             // 
@@ -182,7 +182,7 @@
             this.dtDateNaissance.MaxDate = new System.DateTime(2024, 12, 3, 0, 0, 0, 0);
             this.dtDateNaissance.Name = "dtDateNaissance";
             this.dtDateNaissance.Size = new System.Drawing.Size(200, 20);
-            this.dtDateNaissance.TabIndex = 12;
+            this.dtDateNaissance.TabIndex = 4;
             this.dtDateNaissance.Value = new System.DateTime(2024, 12, 3, 0, 0, 0, 0);
             // 
             // noCiviqueLabel
@@ -209,7 +209,7 @@
             this.tbRue.Location = new System.Drawing.Point(149, 192);
             this.tbRue.Name = "tbRue";
             this.tbRue.Size = new System.Drawing.Size(200, 20);
-            this.tbRue.TabIndex = 16;
+            this.tbRue.TabIndex = 6;
             // 
             // villeLabel
             // 
@@ -226,7 +226,7 @@
             this.tbVille.Location = new System.Drawing.Point(149, 218);
             this.tbVille.Name = "tbVille";
             this.tbVille.Size = new System.Drawing.Size(200, 20);
-            this.tbVille.TabIndex = 18;
+            this.tbVille.TabIndex = 7;
             // 
             // idProvinceLabel
             // 
@@ -279,7 +279,7 @@
             this.tbCourriel.Location = new System.Drawing.Point(149, 348);
             this.tbCourriel.Name = "tbCourriel";
             this.tbCourriel.Size = new System.Drawing.Size(200, 20);
-            this.tbCourriel.TabIndex = 28;
+            this.tbCourriel.TabIndex = 13;
             // 
             // noTypeAbonnementLabel
             // 
@@ -305,7 +305,7 @@
             this.tbRemarque.Location = new System.Drawing.Point(149, 374);
             this.tbRemarque.Name = "tbRemarque";
             this.tbRemarque.Size = new System.Drawing.Size(200, 20);
-            this.tbRemarque.TabIndex = 32;
+            this.tbRemarque.TabIndex = 14;
             // 
             // provincesBindingSource
             // 
@@ -324,7 +324,7 @@
             this.cbProvince.Location = new System.Drawing.Point(149, 243);
             this.cbProvince.Name = "cbProvince";
             this.cbProvince.Size = new System.Drawing.Size(139, 21);
-            this.cbProvince.TabIndex = 32;
+            this.cbProvince.TabIndex = 8;
             this.cbProvince.ValueMember = "Id";
             // 
             // typesAbonnementBindingSource
@@ -349,7 +349,7 @@
             this.lbTypeAbonnement.Location = new System.Drawing.Point(407, 65);
             this.lbTypeAbonnement.Name = "lbTypeAbonnement";
             this.lbTypeAbonnement.Size = new System.Drawing.Size(154, 212);
-            this.lbTypeAbonnement.TabIndex = 32;
+            this.lbTypeAbonnement.TabIndex = 15;
             this.lbTypeAbonnement.ValueMember = "No";
             // 
             // tbTelephone
@@ -359,7 +359,7 @@
             this.tbTelephone.Name = "tbTelephone";
             this.tbTelephone.ResetOnSpace = false;
             this.tbTelephone.Size = new System.Drawing.Size(139, 20);
-            this.tbTelephone.TabIndex = 33;
+            this.tbTelephone.TabIndex = 10;
             // 
             // tbCellulaire
             // 
@@ -368,7 +368,7 @@
             this.tbCellulaire.Name = "tbCellulaire";
             this.tbCellulaire.ResetOnSpace = false;
             this.tbCellulaire.Size = new System.Drawing.Size(139, 20);
-            this.tbCellulaire.TabIndex = 34;
+            this.tbCellulaire.TabIndex = 11;
             // 
             // tbCodePostal
             // 
@@ -379,14 +379,14 @@
             this.tbCodePostal.ResetOnPrompt = false;
             this.tbCodePostal.ResetOnSpace = false;
             this.tbCodePostal.Size = new System.Drawing.Size(139, 20);
-            this.tbCodePostal.TabIndex = 35;
+            this.tbCodePostal.TabIndex = 9;
             // 
             // btnAjouter
             // 
             this.btnAjouter.Location = new System.Drawing.Point(12, 440);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(75, 23);
-            this.btnAjouter.TabIndex = 36;
+            this.btnAjouter.TabIndex = 16;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
@@ -396,7 +396,7 @@
             this.btnAnnuler.Location = new System.Drawing.Point(559, 440);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
-            this.btnAnnuler.TabIndex = 37;
+            this.btnAnnuler.TabIndex = 17;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
@@ -417,7 +417,7 @@
             this.cbSexe.Location = new System.Drawing.Point(149, 113);
             this.cbSexe.Name = "cbSexe";
             this.cbSexe.Size = new System.Drawing.Size(139, 21);
-            this.cbSexe.TabIndex = 38;
+            this.cbSexe.TabIndex = 3;
             this.cbSexe.Text = "Homme";
             // 
             // messageErreur
@@ -429,13 +429,13 @@
             this.numNoCivique.Location = new System.Drawing.Point(149, 166);
             this.numNoCivique.Name = "numNoCivique";
             this.numNoCivique.Size = new System.Drawing.Size(200, 20);
-            this.numNoCivique.TabIndex = 39;
+            this.numNoCivique.TabIndex = 5;
             // 
             // Abonnement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 475);
+            this.ClientSize = new System.Drawing.Size(667, 475);
             this.Controls.Add(this.numNoCivique);
             this.Controls.Add(this.cbSexe);
             this.Controls.Add(this.btnAnnuler);

@@ -53,6 +53,12 @@
     <Compile Include="Abonnement.Designer.cs">
       <DependentUpon>Abonnement.cs</DependentUpon>
     </Compile>
+    <Compile Include="AbonnementConjoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbonnementConjoint.Designer.cs">
+      <DependentUpon>AbonnementConjoint.cs</DependentUpon>
+    </Compile>
     <Compile Include="AjoutEmp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Abonnement.resx">
       <DependentUpon>Abonnement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbonnementConjoint.resx">
+      <DependentUpon>AbonnementConjoint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AjoutEmp.resx">
       <DependentUpon>AjoutEmp.cs</DependentUpon>
