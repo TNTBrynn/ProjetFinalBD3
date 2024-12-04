@@ -69,6 +69,7 @@
             this.cbSexe = new System.Windows.Forms.ComboBox();
             this.messageErreur = new System.Windows.Forms.ErrorProvider(this.components);
             this.numNoCivique = new System.Windows.Forms.NumericUpDown();
+            this.numNbEnfant = new System.Windows.Forms.NumericUpDown();
             nomLabel = new System.Windows.Forms.Label();
             prenomLabel = new System.Windows.Forms.Label();
             sexeLabel = new System.Windows.Forms.Label();
@@ -90,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.typesAbonnementBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messageErreur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numNoCivique)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNbEnfant)).BeginInit();
             this.SuspendLayout();
             // 
             // nomLabel
@@ -351,6 +353,7 @@
             this.lbTypeAbonnement.Size = new System.Drawing.Size(154, 212);
             this.lbTypeAbonnement.TabIndex = 15;
             this.lbTypeAbonnement.ValueMember = "No";
+            this.lbTypeAbonnement.SelectedValueChanged += new System.EventHandler(this.lbTypeAbonnement_SelectedValueChanged);
             // 
             // tbTelephone
             // 
@@ -412,8 +415,7 @@
             this.cbSexe.FormattingEnabled = true;
             this.cbSexe.Items.AddRange(new object[] {
             "Homme",
-            "Femme",
-            "Ne préfère pas spécifier"});
+            "Femme"});
             this.cbSexe.Location = new System.Drawing.Point(149, 113);
             this.cbSexe.Name = "cbSexe";
             this.cbSexe.Size = new System.Drawing.Size(139, 21);
@@ -446,11 +448,35 @@
             0,
             0});
             // 
+            // numNbEnfant
+            // 
+            this.numNbEnfant.Location = new System.Drawing.Point(407, 284);
+            this.numNbEnfant.Maximum = new decimal(new int[] {
+            9,
+            0,
+            0,
+            0});
+            this.numNbEnfant.Minimum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numNbEnfant.Name = "numNbEnfant";
+            this.numNbEnfant.Size = new System.Drawing.Size(42, 20);
+            this.numNbEnfant.TabIndex = 32;
+            this.numNbEnfant.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numNbEnfant.Visible = false;
+            // 
             // Abonnement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 475);
+            this.Controls.Add(this.numNbEnfant);
             this.Controls.Add(this.numNoCivique);
             this.Controls.Add(this.cbSexe);
             this.Controls.Add(this.btnAnnuler);
@@ -491,6 +517,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.typesAbonnementBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messageErreur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numNoCivique)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNbEnfant)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -524,5 +551,6 @@
         private System.Windows.Forms.ComboBox cbSexe;
         private System.Windows.Forms.ErrorProvider messageErreur;
         private System.Windows.Forms.NumericUpDown numNoCivique;
+        private System.Windows.Forms.NumericUpDown numNbEnfant;
     }
 }

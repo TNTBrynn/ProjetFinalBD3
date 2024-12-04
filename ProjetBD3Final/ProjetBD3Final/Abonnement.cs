@@ -111,7 +111,7 @@ namespace ProjetBD3Final
                 messageErreur.SetError(tbCourriel, "Le courriel est obligatoire");
                 vide = true;
             }
-            if (sexe.Substring(0, 1) != "H" && sexe.Substring(0, 1) != "F" && sexe.Substring(0, 1) != "N")
+            if (sexe.Substring(0, 1) != "H" && sexe.Substring(0, 1) != "F")
             {
                 messageErreur.SetError(cbSexe, "Le sexe est invalide, choississez depuis la liste déroulante");
                 vide = true;
@@ -201,73 +201,62 @@ namespace ProjetBD3Final
                                     transaction.Commit();
                                     MessageBox.Show("Abonné et conjoint ajouté avec succès");
                                 }
-                                Dependants[] listDependantsEnfants;
-                                if (typeAbonnement == 4) //famille 1 enfants
+                                int nbEnfants = 0;
+                                switch (typeAbonnement)
                                 {
-                                    Dependants dependantEnfant = new Dependants();
-                                    dependantEnfant.Id = "E";
+                                    case
+                                        4: //famille 1 enfants
+                                        nbEnfants = 1;
+                                        break;
+                                    case 5: //famille 2
+                                        nbEnfants = 2;
+                                        break;
+                                    case 6: //famille +3
+                                        //demander à l'utilisateur combien il y a d'enfants
+                                        nbEnfants = (int)numNbEnfant.Value;
+                                        break;
+                                }
+                                List<Dependants> listEnfants = new List<Dependants>();
+                                for (int i = 0; i < nbEnfants; i++)
+                                {
+                                    Dependants dependantEnfants = new Dependants();
+                                    listEnfants.Add(dependantEnfants);
+                                    listEnfants[i].Id = "E";
 
-                                    AbonnementDependants formAbonnementEnfant = new AbonnementDependants(dependantEnfant);
+                                    AbonnementDependants formAbonnementEnfant = new AbonnementDependants(listEnfants[i]);
                                     formAbonnementEnfant.ShowDialog();
-                                    dependantEnfant = formAbonnementEnfant.dependant;
+                                    listEnfants[i] = formAbonnementEnfant.dependant;
 
-                                    if (dependantEnfant.Nom != null)
+                                    if (listEnfants[i].Nom != null)
                                     {
-                                        dependantEnfant.Id = idGroupe + "E1";
-                                        dependantEnfant.IdAbonnement = newAbonnement.Id;
-                                        dataContext.Dependants.InsertOnSubmit(dependantEnfant);
-
-                                        dataContext.SubmitChanges();
-                                        transaction.Commit();
-                                        MessageBox.Show("Abonné, conjoint et enfant ajouté avec succès");
+                                        listEnfants[i].Id = idGroupe + "E" + (i + 1);
+                                        listEnfants[i].IdAbonnement = newAbonnement.Id;
+                                        dataContext.Dependants.InsertOnSubmit(listEnfants[i]);
                                     }
                                     else
                                     {
                                         transaction.Rollback();
-                                        MessageBox.Show("Enregistrement de l'enfant annulé. Aucune opération effectué ou enregistrer.\n" +
-                                            "Vous devrez réenregistrer l'abonnée principal et son/sa conjoint(e)");
+                                        MessageBox.Show("Enregistrement de l'enfant annulé. Aucune opération effectuée ou enregistr.e.\n" +
+                                            "Vous devrez réenregistrer l'abonné(e) principal(e) et son/sa conjoint(e)");
+                                        break;
                                     }
                                 }
-                                else if (typeAbonnement == 5) //famille 2 enfants
+                                foreach (var enfant in listEnfants)
                                 {
-                                    listDependantsEnfants = new Dependants[2];
-                                    for (int i = 0; i < 2; i++)
-                                    {
-
-                                        listDependantsEnfants[i].Id = "E";
-
-                                        AbonnementDependants formAbonnementEnfant = new AbonnementDependants(listDependantsEnfants[i]);
-                                        formAbonnementEnfant.ShowDialog();
-                                        listDependantsEnfants[i] = formAbonnementEnfant.dependant;
-
-                                        if (listDependantsEnfants[i].Nom != null)
-                                        {
-                                            listDependantsEnfants[i].Id = idGroupe + "E" + (i + 1);
-                                            listDependantsEnfants[i].IdAbonnement = newAbonnement.Id;
-                                            dataContext.Dependants.InsertOnSubmit(listDependantsEnfants[i]);
-                                        }
-                                        else
-                                        {
-                                            transaction.Rollback();
-                                            MessageBox.Show("Enregistrement de l'enfant annulé. Aucune opération effectué ou enregistrer.\n" +
-                                                "Vous devrez réenregistrer l'abonnée principal et son/sa conjoint(e)");
-                                            break;
-                                        }
-                                    }
-                                    if (listDependantsEnfants[0].Nom != null || listDependantsEnfants[1].Nom != null)
+                                    if (enfant.Nom != null)
                                     {
                                         dataContext.SubmitChanges();
                                         transaction.Commit();
-                                        MessageBox.Show("Abonné, conjoint et 2 enfants ajouté avec succès");
+                                        MessageBox.Show("Abonné, conjoint et " + nbEnfants + " enfants ajouté avec succès");
+                                        break;
                                     }
-
                                 }
                             }
                             else //conjoint echec
                             {
                                 transaction.Rollback();
                                 MessageBox.Show("Enregistrement du conjoint annulé. Aucune opération effectué ou enregistrer.\n" +
-                                    "Vous devrez réenregistrer l'abonnée principal et son/sa conjoint(e)");
+                                    "Vous devrez réenregistrer l'abonné(e) principal(e) et son/sa conjoint(e)");
                             }
                         }
                     }
@@ -284,6 +273,22 @@ namespace ProjetBD3Final
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lbTypeAbonnement_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbTypeAbonnement.SelectedValue != null)
+            {
+                if ((int)lbTypeAbonnement.SelectedValue == 6)
+                {
+                    numNbEnfant.Value = 3;
+                    numNbEnfant.Visible = true;
+                }
+                else
+                {
+                    numNbEnfant.Visible = false;
+                }
+            }
         }
     }
 }

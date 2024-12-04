@@ -94,7 +94,7 @@ namespace ProjetBD3Final
                     erreur = true;
                 }
             }
-            if (sexe.Substring(0, 1) != "H" && sexe.Substring(0, 1) != "F" && sexe.Substring(0, 1) != "N")
+            if (sexe.Substring(0, 1) != "H" && sexe.Substring(0, 1) != "F")
             {
                 messageErreur.SetError(cbSexe, "Le sexe est invalide, choississez depuis la liste déroulante");
                 vide = true;

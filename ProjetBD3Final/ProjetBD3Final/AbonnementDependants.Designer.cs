@@ -187,8 +187,7 @@
             this.cbSexe.FormattingEnabled = true;
             this.cbSexe.Items.AddRange(new object[] {
             "Homme",
-            "Femme",
-            "Ne préfère pas spécifier"});
+            "Femme"});
             this.cbSexe.Location = new System.Drawing.Point(109, 74);
             this.cbSexe.Name = "cbSexe";
             this.cbSexe.Size = new System.Drawing.Size(139, 21);
