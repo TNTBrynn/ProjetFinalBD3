@@ -1,6 +1,6 @@
 ﻿namespace ProjetBD3Final
 {
-    partial class AbonnementConjoint
+    partial class AbonnementDependants
     {
         /// <summary>
         /// Required designer variable.

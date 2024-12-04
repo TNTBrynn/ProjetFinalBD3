@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace ProjetBD3Final
 {
-    public partial class AbonnementConjoint : Form
+    public partial class AbonnementDependants : Form
     {
         public Dependants dependant;
-        public AbonnementConjoint(Dependants dependant)
+        public AbonnementDependants(Dependants dependant)
         {
             InitializeComponent();
             this.dependant = dependant;
