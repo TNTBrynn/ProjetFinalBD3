@@ -49,5 +49,13 @@ namespace ProjetBD3Final
             abonnement.FormClosed += (s, args) => this.Show();
             abonnement.Show();
         }
+
+        private void btnReabonnement_Click(object sender, EventArgs e)
+        {
+            Reabonnement reabonnement = new Reabonnement();
+            this.Hide();
+            reabonnement.FormClosed += (s, args) => this.Show();
+            reabonnement.Show();
+        }
     }
 }

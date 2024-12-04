@@ -109,6 +109,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reabonnement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reabonnement.Designer.cs">
+      <DependentUpon>Reabonnement.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Abonnement.resx">
       <DependentUpon>Abonnement.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +148,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reabonnement.resx">
+      <DependentUpon>Reabonnement.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="BDB56Projet2GSDataSet.xsc">
       <DependentUpon>BDB56Projet2GSDataSet.xsd</DependentUpon>
     </None>
