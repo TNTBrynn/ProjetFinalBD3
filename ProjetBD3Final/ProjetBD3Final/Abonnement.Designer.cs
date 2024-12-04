@@ -47,6 +47,8 @@
             this.abonnementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.abonnementsTableAdapter = new ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.AbonnementsTableAdapter();
             this.tableAdapterManager = new ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.TableAdapterManager();
+            this.provincesTableAdapter = new ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.ProvincesTableAdapter();
+            this.typesAbonnementTableAdapter = new ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.TypesAbonnementTableAdapter();
             this.tbNom = new System.Windows.Forms.TextBox();
             this.tbPrenom = new System.Windows.Forms.TextBox();
             this.dtDateNaissance = new System.Windows.Forms.DateTimePicker();
@@ -55,10 +57,8 @@
             this.tbCourriel = new System.Windows.Forms.TextBox();
             this.tbRemarque = new System.Windows.Forms.TextBox();
             this.provincesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.provincesTableAdapter = new ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.ProvincesTableAdapter();
             this.cbProvince = new System.Windows.Forms.ComboBox();
             this.typesAbonnementBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.typesAbonnementTableAdapter = new ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.TypesAbonnementTableAdapter();
             this.typesAbonnementBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.lbTypeAbonnement = new System.Windows.Forms.ListBox();
             this.tbTelephone = new System.Windows.Forms.MaskedTextBox();
@@ -92,37 +92,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numNoCivique)).BeginInit();
             this.SuspendLayout();
             // 
-            // bDB56Projet2GSDataSet
-            // 
-            this.bDB56Projet2GSDataSet.DataSetName = "BDB56Projet2GSDataSet";
-            this.bDB56Projet2GSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // abonnementsBindingSource
-            // 
-            this.abonnementsBindingSource.DataMember = "Abonnements";
-            this.abonnementsBindingSource.DataSource = this.bDB56Projet2GSDataSet;
-            // 
-            // abonnementsTableAdapter
-            // 
-            this.abonnementsTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AbonnementsTableAdapter = this.abonnementsTableAdapter;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.DependantsTableAdapter = null;
-            this.tableAdapterManager.DepensesTableAdapter = null;
-            this.tableAdapterManager.EmployesTableAdapter = null;
-            this.tableAdapterManager.PartiesJoueesTableAdapter = null;
-            this.tableAdapterManager.PrixDepensesAbonnementsTableAdapter = null;
-            this.tableAdapterManager.ProvincesTableAdapter = this.provincesTableAdapter;
-            this.tableAdapterManager.ReabonnementsTableAdapter = null;
-            this.tableAdapterManager.ServicesTableAdapter = null;
-            this.tableAdapterManager.TerrainsTableAdapter = null;
-            this.tableAdapterManager.TypesAbonnementTableAdapter = this.typesAbonnementTableAdapter;
-            this.tableAdapterManager.TypesEmployeTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // nomLabel
             // 
             nomLabel.AutoSize = true;
@@ -132,14 +101,6 @@
             nomLabel.TabIndex = 5;
             nomLabel.Text = "Nom:";
             // 
-            // tbNom
-            // 
-            this.tbNom.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.abonnementsBindingSource, "Nom", true));
-            this.tbNom.Location = new System.Drawing.Point(149, 62);
-            this.tbNom.Name = "tbNom";
-            this.tbNom.Size = new System.Drawing.Size(200, 20);
-            this.tbNom.TabIndex = 1;
-            // 
             // prenomLabel
             // 
             prenomLabel.AutoSize = true;
@@ -148,14 +109,6 @@
             prenomLabel.Size = new System.Drawing.Size(46, 13);
             prenomLabel.TabIndex = 7;
             prenomLabel.Text = "Prenom:";
-            // 
-            // tbPrenom
-            // 
-            this.tbPrenom.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.abonnementsBindingSource, "Prenom", true));
-            this.tbPrenom.Location = new System.Drawing.Point(149, 88);
-            this.tbPrenom.Name = "tbPrenom";
-            this.tbPrenom.Size = new System.Drawing.Size(200, 20);
-            this.tbPrenom.TabIndex = 2;
             // 
             // sexeLabel
             // 
@@ -175,16 +128,6 @@
             dateNaissanceLabel.TabIndex = 11;
             dateNaissanceLabel.Text = "Date Naissance:";
             // 
-            // dtDateNaissance
-            // 
-            this.dtDateNaissance.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.abonnementsBindingSource, "DateNaissance", true));
-            this.dtDateNaissance.Location = new System.Drawing.Point(149, 140);
-            this.dtDateNaissance.MaxDate = new System.DateTime(2024, 12, 3, 0, 0, 0, 0);
-            this.dtDateNaissance.Name = "dtDateNaissance";
-            this.dtDateNaissance.Size = new System.Drawing.Size(200, 20);
-            this.dtDateNaissance.TabIndex = 4;
-            this.dtDateNaissance.Value = new System.DateTime(2024, 12, 3, 0, 0, 0, 0);
-            // 
             // noCiviqueLabel
             // 
             noCiviqueLabel.AutoSize = true;
@@ -203,14 +146,6 @@
             rueLabel.TabIndex = 15;
             rueLabel.Text = "Rue:";
             // 
-            // tbRue
-            // 
-            this.tbRue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.abonnementsBindingSource, "Rue", true));
-            this.tbRue.Location = new System.Drawing.Point(149, 192);
-            this.tbRue.Name = "tbRue";
-            this.tbRue.Size = new System.Drawing.Size(200, 20);
-            this.tbRue.TabIndex = 6;
-            // 
             // villeLabel
             // 
             villeLabel.AutoSize = true;
@@ -219,14 +154,6 @@
             villeLabel.Size = new System.Drawing.Size(29, 13);
             villeLabel.TabIndex = 17;
             villeLabel.Text = "Ville:";
-            // 
-            // tbVille
-            // 
-            this.tbVille.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.abonnementsBindingSource, "Ville", true));
-            this.tbVille.Location = new System.Drawing.Point(149, 218);
-            this.tbVille.Name = "tbVille";
-            this.tbVille.Size = new System.Drawing.Size(200, 20);
-            this.tbVille.TabIndex = 7;
             // 
             // idProvinceLabel
             // 
@@ -273,14 +200,6 @@
             courrielLabel.TabIndex = 27;
             courrielLabel.Text = "Courriel:";
             // 
-            // tbCourriel
-            // 
-            this.tbCourriel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.abonnementsBindingSource, "Courriel", true));
-            this.tbCourriel.Location = new System.Drawing.Point(149, 348);
-            this.tbCourriel.Name = "tbCourriel";
-            this.tbCourriel.Size = new System.Drawing.Size(200, 20);
-            this.tbCourriel.TabIndex = 13;
-            // 
             // noTypeAbonnementLabel
             // 
             noTypeAbonnementLabel.AutoSize = true;
@@ -299,6 +218,95 @@
             remarqueLabel.TabIndex = 31;
             remarqueLabel.Text = "Remarque:";
             // 
+            // bDB56Projet2GSDataSet
+            // 
+            this.bDB56Projet2GSDataSet.DataSetName = "BDB56Projet2GSDataSet";
+            this.bDB56Projet2GSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // abonnementsBindingSource
+            // 
+            this.abonnementsBindingSource.DataMember = "Abonnements";
+            this.abonnementsBindingSource.DataSource = this.bDB56Projet2GSDataSet;
+            // 
+            // abonnementsTableAdapter
+            // 
+            this.abonnementsTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AbonnementsTableAdapter = this.abonnementsTableAdapter;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.DependantsTableAdapter = null;
+            this.tableAdapterManager.DepensesTableAdapter = null;
+            this.tableAdapterManager.EmployesTableAdapter = null;
+            this.tableAdapterManager.PartiesJoueesTableAdapter = null;
+            this.tableAdapterManager.PrixDepensesAbonnementsTableAdapter = null;
+            this.tableAdapterManager.ProvincesTableAdapter = this.provincesTableAdapter;
+            this.tableAdapterManager.ReabonnementsTableAdapter = null;
+            this.tableAdapterManager.ServicesTableAdapter = null;
+            this.tableAdapterManager.TerrainsTableAdapter = null;
+            this.tableAdapterManager.TypesAbonnementTableAdapter = this.typesAbonnementTableAdapter;
+            this.tableAdapterManager.TypesEmployeTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // provincesTableAdapter
+            // 
+            this.provincesTableAdapter.ClearBeforeFill = true;
+            // 
+            // typesAbonnementTableAdapter
+            // 
+            this.typesAbonnementTableAdapter.ClearBeforeFill = true;
+            // 
+            // tbNom
+            // 
+            this.tbNom.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.abonnementsBindingSource, "Nom", true));
+            this.tbNom.Location = new System.Drawing.Point(149, 62);
+            this.tbNom.Name = "tbNom";
+            this.tbNom.Size = new System.Drawing.Size(200, 20);
+            this.tbNom.TabIndex = 1;
+            // 
+            // tbPrenom
+            // 
+            this.tbPrenom.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.abonnementsBindingSource, "Prenom", true));
+            this.tbPrenom.Location = new System.Drawing.Point(149, 88);
+            this.tbPrenom.Name = "tbPrenom";
+            this.tbPrenom.Size = new System.Drawing.Size(200, 20);
+            this.tbPrenom.TabIndex = 2;
+            // 
+            // dtDateNaissance
+            // 
+            this.dtDateNaissance.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.abonnementsBindingSource, "DateNaissance", true));
+            this.dtDateNaissance.Location = new System.Drawing.Point(149, 140);
+            this.dtDateNaissance.MaxDate = new System.DateTime(2024, 12, 3, 0, 0, 0, 0);
+            this.dtDateNaissance.Name = "dtDateNaissance";
+            this.dtDateNaissance.Size = new System.Drawing.Size(200, 20);
+            this.dtDateNaissance.TabIndex = 4;
+            this.dtDateNaissance.Value = new System.DateTime(2024, 12, 3, 0, 0, 0, 0);
+            // 
+            // tbRue
+            // 
+            this.tbRue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.abonnementsBindingSource, "Rue", true));
+            this.tbRue.Location = new System.Drawing.Point(149, 192);
+            this.tbRue.Name = "tbRue";
+            this.tbRue.Size = new System.Drawing.Size(200, 20);
+            this.tbRue.TabIndex = 6;
+            // 
+            // tbVille
+            // 
+            this.tbVille.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.abonnementsBindingSource, "Ville", true));
+            this.tbVille.Location = new System.Drawing.Point(149, 218);
+            this.tbVille.Name = "tbVille";
+            this.tbVille.Size = new System.Drawing.Size(200, 20);
+            this.tbVille.TabIndex = 7;
+            // 
+            // tbCourriel
+            // 
+            this.tbCourriel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.abonnementsBindingSource, "Courriel", true));
+            this.tbCourriel.Location = new System.Drawing.Point(149, 348);
+            this.tbCourriel.Name = "tbCourriel";
+            this.tbCourriel.Size = new System.Drawing.Size(200, 20);
+            this.tbCourriel.TabIndex = 13;
+            // 
             // tbRemarque
             // 
             this.tbRemarque.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.abonnementsBindingSource, "Remarque", true));
@@ -311,10 +319,6 @@
             // 
             this.provincesBindingSource.DataMember = "Provinces";
             this.provincesBindingSource.DataSource = this.bDB56Projet2GSDataSet;
-            // 
-            // provincesTableAdapter
-            // 
-            this.provincesTableAdapter.ClearBeforeFill = true;
             // 
             // cbProvince
             // 
@@ -331,10 +335,6 @@
             // 
             this.typesAbonnementBindingSource.DataMember = "TypesAbonnement";
             this.typesAbonnementBindingSource.DataSource = this.bDB56Projet2GSDataSet;
-            // 
-            // typesAbonnementTableAdapter
-            // 
-            this.typesAbonnementTableAdapter.ClearBeforeFill = true;
             // 
             // typesAbonnementBindingSource1
             // 
@@ -374,7 +374,7 @@
             // 
             this.tbCodePostal.AsciiOnly = true;
             this.tbCodePostal.Location = new System.Drawing.Point(149, 270);
-            this.tbCodePostal.Mask = " >L0L0L0";
+            this.tbCodePostal.Mask = ">L0L0L0";
             this.tbCodePostal.Name = "tbCodePostal";
             this.tbCodePostal.ResetOnPrompt = false;
             this.tbCodePostal.ResetOnSpace = false;
@@ -427,9 +427,24 @@
             // numNoCivique
             // 
             this.numNoCivique.Location = new System.Drawing.Point(149, 166);
+            this.numNoCivique.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.numNoCivique.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numNoCivique.Name = "numNoCivique";
             this.numNoCivique.Size = new System.Drawing.Size(200, 20);
             this.numNoCivique.TabIndex = 5;
+            this.numNoCivique.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // Abonnement
             // 

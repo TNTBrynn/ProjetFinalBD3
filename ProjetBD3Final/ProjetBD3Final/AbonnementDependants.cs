@@ -24,14 +24,12 @@ namespace ProjetBD3Final
             this.Validate();
             this.dependantsBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.bDB56Projet2GSDataSet);
-
         }
 
         private void AbonnementConjoint_Load(object sender, EventArgs e)
         {
             // TODO: cette ligne de code charge les données dans la table 'bDB56Projet2GSDataSet.Dependants'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.dependantsTableAdapter.Fill(this.bDB56Projet2GSDataSet.Dependants);
-
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
@@ -66,10 +64,26 @@ namespace ProjetBD3Final
                 erreur = true;
             }
             TimeSpan age = DateTime.Now - dateNaissance;
-            if (age < new TimeSpan(365 * 18, 0, 0, 0))
+            if(dependant.Id == "C")
             {
-                messageErreur.SetError(dtDateNaissance, "Le conjoint doit être majeur");
-                erreur = true;
+                if (age < new TimeSpan(365 * 18, 0, 0, 0))
+                {
+                    messageErreur.SetError(dtDateNaissance, "Le conjoint doit être majeur");
+                    erreur = true;
+                }
+            }
+            else
+            {
+                if(age < new TimeSpan(365 * 1, 0, 0, 0))
+                {
+                    messageErreur.SetError(dtDateNaissance, "L'enfant doit être agé d'au moins 1 ans");
+                    erreur = true;
+                }
+                else if (age > new TimeSpan(365 * 18, 0, 0, 0))
+                {
+                    messageErreur.SetError(dtDateNaissance, "L'enfant ne peut pas être majeur");
+                    erreur = true;
+                }
             }
             if (sexe.Substring(0, 1) != "H" && sexe.Substring(0, 1) != "F" && sexe.Substring(0, 1) != "N")
             {
