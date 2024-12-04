@@ -151,9 +151,10 @@ namespace ProjetBD3Final
 
                         int nbAbonnement = (from abonnement in dataContext.Abonnements
                                             select abonnement).Count();
+                        string idGroupe = nom + (nbAbonnement + 1);
                         Abonnements newAbonnement = new Abonnements
                         {
-                            Id = nom + (nbAbonnement + 1) + "P",
+                            Id = idGroupe + "P",
                             DateAbonnement = DateTime.Today,
                             Nom = nom,
                             Prenom = prenom,
@@ -190,7 +191,7 @@ namespace ProjetBD3Final
 
                             if (dependantConjoint.Nom != null)
                             {
-                                dependantConjoint.Id = newAbonnement.Nom + (nbAbonnement + 1) + dependantConjoint.Sexe + 0;
+                                dependantConjoint.Id = idGroupe + dependantConjoint.Sexe + "0";
                                 dependantConjoint.IdAbonnement = newAbonnement.Id;
                                 dataContext.Dependants.InsertOnSubmit(dependantConjoint);
 
@@ -212,7 +213,7 @@ namespace ProjetBD3Final
 
                                     if (dependantEnfant.Nom != null)
                                     {
-                                        dependantEnfant.Id = newAbonnement.Nom + (nbAbonnement + 1) + "E1";
+                                        dependantEnfant.Id = idGroupe + "E1";
                                         dependantEnfant.IdAbonnement = newAbonnement.Id;
                                         dataContext.Dependants.InsertOnSubmit(dependantEnfant);
 
@@ -229,22 +230,21 @@ namespace ProjetBD3Final
                                 }
                                 else if (typeAbonnement == 5) //famille 2 enfants
                                 {
-                                    //modifier pour liste
                                     listDependantsEnfants = new Dependants[2];
-                                    for (int i = 1; i <= 2; i++)
+                                    for (int i = 0; i < 2; i++)
                                     {
-                                        Dependants dependantEnfant = new Dependants();
-                                        dependantEnfant.Id = "E";
 
-                                        AbonnementDependants formAbonnementEnfant = new AbonnementDependants(dependantEnfant);
+                                        listDependantsEnfants[i].Id = "E";
+
+                                        AbonnementDependants formAbonnementEnfant = new AbonnementDependants(listDependantsEnfants[i]);
                                         formAbonnementEnfant.ShowDialog();
-                                        dependantEnfant = formAbonnementEnfant.dependant;
+                                        listDependantsEnfants[i] = formAbonnementEnfant.dependant;
 
-                                        if (dependantEnfant.Nom != null)
+                                        if (listDependantsEnfants[i].Nom != null)
                                         {
-                                            dependantEnfant.Id = newAbonnement.Nom + (nbAbonnement + 1) + "E" + i;
-                                            dependantEnfant.IdAbonnement = newAbonnement.Id;
-                                            dataContext.Dependants.InsertOnSubmit(dependantEnfant);
+                                            listDependantsEnfants[i].Id = idGroupe + "E" + (i + 1);
+                                            listDependantsEnfants[i].IdAbonnement = newAbonnement.Id;
+                                            dataContext.Dependants.InsertOnSubmit(listDependantsEnfants[i]);
                                         }
                                         else
                                         {
