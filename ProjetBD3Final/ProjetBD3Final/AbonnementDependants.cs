@@ -17,6 +17,15 @@ namespace ProjetBD3Final
         {
             InitializeComponent();
             this.dependant = dependant;
+
+            if (dependant.Id == "C")
+            {
+                this.Text = "Ajouter un conjoint";
+            }
+            else
+            {
+                this.Text = "Ajouter un enfant";
+            }
         }
 
         private void dependantsBindingNavigatorSaveItem_Click(object sender, EventArgs e)

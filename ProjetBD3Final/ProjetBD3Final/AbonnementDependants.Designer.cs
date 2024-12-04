@@ -208,7 +208,7 @@
             // 
             this.messageErreur.ContainerControl = this;
             // 
-            // AbonnementConjoint
+            // AbonnementDependants
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -225,8 +225,8 @@
             this.Controls.Add(dateNaissanceLabel);
             this.Controls.Add(remarqueLabel);
             this.Controls.Add(this.tbRemarque);
-            this.Name = "AbonnementConjoint";
-            this.Text = "AbonnementConjoint";
+            this.Name = "AbonnementDependants";
+            this.Text = "AbonnementDependant";
             this.Load += new System.EventHandler(this.AbonnementConjoint_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bDB56Projet2GSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dependantsBindingSource)).EndInit();
