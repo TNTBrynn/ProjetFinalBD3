@@ -57,5 +57,13 @@ namespace ProjetBD3Final
             reabonnement.FormClosed += (s, args) => this.Show();
             reabonnement.Show();
         }
+
+        private void btnMajAbonne_Click(object sender, EventArgs e)
+        {
+            MajAbonne majAbonne = new MajAbonne();
+            this.Hide();
+            majAbonne.FormClosed += (s, args) => this.Show();
+            majAbonne.Show();
+        }
     }
 }

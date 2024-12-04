@@ -33,6 +33,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btnAbonnement = new System.Windows.Forms.Button();
             this.btnReabonnement = new System.Windows.Forms.Button();
+            this.btnMajAbonne = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -89,11 +90,23 @@
             this.btnReabonnement.UseVisualStyleBackColor = true;
             this.btnReabonnement.Click += new System.EventHandler(this.btnReabonnement_Click);
             // 
+            // btnMajAbonne
+            // 
+            this.btnMajAbonne.Location = new System.Drawing.Point(427, 149);
+            this.btnMajAbonne.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMajAbonne.Name = "btnMajAbonne";
+            this.btnMajAbonne.Size = new System.Drawing.Size(128, 37);
+            this.btnMajAbonne.TabIndex = 6;
+            this.btnMajAbonne.Text = "Mise à jour abonnés";
+            this.btnMajAbonne.UseVisualStyleBackColor = true;
+            this.btnMajAbonne.Click += new System.EventHandler(this.btnMajAbonne_Click);
+            // 
             // MenuAdministrateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btnMajAbonne);
             this.Controls.Add(this.btnReabonnement);
             this.Controls.Add(this.btnAbonnement);
             this.Controls.Add(this.button3);
@@ -114,5 +127,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnAbonnement;
         private System.Windows.Forms.Button btnReabonnement;
+        private System.Windows.Forms.Button btnMajAbonne;
     }
 }
