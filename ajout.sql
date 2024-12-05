@@ -1,0 +1,6 @@
+insert into Terrains (No, Nom, NombreTrous, Description) values (1, 'Terrier de la marmotte', 9, 'Une marmotte se cache, s''aurez-vous la trouver?')
+insert into Terrains (No, Nom, NombreTrous, Description) values (2, 'Le galopin', 18, 'Ce terrain à un dénivelé important, faites attention à votre balle...')
+insert into Terrains (No, Nom, NombreTrous, Description) values (3, 'L''affreux', 9, 'Il fonctionne.')
+insert into Terrains (No, Nom, NombreTrous, Description) values (4, 'Le bois', 9, 'Ce terrain se trouve en plein milieu d''une forêt primaire. Si vous trouvez le Sasquatch, vous receverez une récompense.')
+insert into Terrains (No, Nom, NombreTrous, Description) values (5, 'Max et les cavaliers de l''Apocalypse', 18, 'Des statues à thèmes sont dispersé à travers le terrain')
+insert into Terrains (No, Nom, NombreTrous, Description) values (6, 'Gérard Deuxpardeux', 18, 'Un homme se promène avec une bouteille de vin rouge')

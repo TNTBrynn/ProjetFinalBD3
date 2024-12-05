@@ -34,6 +34,7 @@
             this.btnAbonnement = new System.Windows.Forms.Button();
             this.btnReabonnement = new System.Windows.Forms.Button();
             this.btnMajAbonne = new System.Windows.Forms.Button();
+            this.btnInscriptionPartie = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -101,11 +102,23 @@
             this.btnMajAbonne.UseVisualStyleBackColor = true;
             this.btnMajAbonne.Click += new System.EventHandler(this.btnMajAbonne_Click);
             // 
+            // btnInscriptionPartie
+            // 
+            this.btnInscriptionPartie.Location = new System.Drawing.Point(34, 247);
+            this.btnInscriptionPartie.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInscriptionPartie.Name = "btnInscriptionPartie";
+            this.btnInscriptionPartie.Size = new System.Drawing.Size(162, 37);
+            this.btnInscriptionPartie.TabIndex = 7;
+            this.btnInscriptionPartie.Text = "Inscription d\'une partie jouée";
+            this.btnInscriptionPartie.UseVisualStyleBackColor = true;
+            this.btnInscriptionPartie.Click += new System.EventHandler(this.btnInscriptionPartie_Click);
+            // 
             // MenuAdministrateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btnInscriptionPartie);
             this.Controls.Add(this.btnMajAbonne);
             this.Controls.Add(this.btnReabonnement);
             this.Controls.Add(this.btnAbonnement);
@@ -128,5 +141,6 @@
         private System.Windows.Forms.Button btnAbonnement;
         private System.Windows.Forms.Button btnReabonnement;
         private System.Windows.Forms.Button btnMajAbonne;
+        private System.Windows.Forms.Button btnInscriptionPartie;
     }
 }

@@ -89,6 +89,12 @@
     <Compile Include="GestionPrix.Designer.cs">
       <DependentUpon>GestionPrix.cs</DependentUpon>
     </Compile>
+    <Compile Include="InscriptionPartie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InscriptionPartie.Designer.cs">
+      <DependentUpon>InscriptionPartie.cs</DependentUpon>
+    </Compile>
     <Compile Include="MajAbonne.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionPrix.resx">
       <DependentUpon>GestionPrix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InscriptionPartie.resx">
+      <DependentUpon>InscriptionPartie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MajAbonne.resx">
       <DependentUpon>MajAbonne.cs</DependentUpon>

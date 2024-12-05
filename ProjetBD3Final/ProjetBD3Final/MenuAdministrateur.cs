@@ -65,5 +65,13 @@ namespace ProjetBD3Final
             majAbonne.FormClosed += (s, args) => this.Show();
             majAbonne.Show();
         }
+
+        private void btnInscriptionPartie_Click(object sender, EventArgs e)
+        {
+            InscriptionPartie inscriptionPartie = new InscriptionPartie();
+            this.Hide();
+            inscriptionPartie.FormClosed += (s, args) => this.Show();
+            inscriptionPartie.Show();
+        }
     }
 }
