@@ -74,6 +74,10 @@ namespace ProjetBD3Final
             {
                 messageErreur = "Le numéro civique doit être un nombre";
             }
+            else if (!(sexe == "H" || sexe == "F"))
+            {
+                messageErreur = "Le sexe doit être H ou F";
+            }
 
             dgAbonnements.Rows[e.RowIndex].ErrorText = messageErreur;
             if (messageErreur != string.Empty)
@@ -85,6 +89,35 @@ namespace ProjetBD3Final
         {
             dgAbonnements.Rows[e.RowIndex].ErrorText = "Le type de données de " + dgAbonnements.Columns[e.ColumnIndex].HeaderText + " n'est pas valide.";
             e.Cancel = true;
+        }
+        private void dgDependants_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            dgDependants.Rows[e.RowIndex].ErrorText = "Le type de données de " + dgDependants.Columns[e.ColumnIndex].HeaderText + " n'est pas valide.";
+            e.Cancel = true;
+        }
+
+        private void dgDependants_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            string messageErreur = string.Empty;
+            string nom = dgDependants["dgTxtNomDependant", e.RowIndex].Value?.ToString();
+            string prenom = dgDependants["dgTxtPrenomDependant", e.RowIndex].Value?.ToString();
+            string sexe = dgDependants["dgTxtSexeDependant", e.RowIndex].Value?.ToString();
+
+
+            if (String.IsNullOrEmpty(prenom) || String.IsNullOrEmpty(sexe) || String.IsNullOrEmpty(nom))
+            {
+                messageErreur = "Tous les champs sauf le champs Remarques sont requis";
+            }
+            else if (!(sexe == "H" || sexe == "F"))
+            {
+                messageErreur = "Le sexe doit être H ou F";
+            }
+
+            dgDependants.Rows[e.RowIndex].ErrorText = messageErreur;
+            if (messageErreur != string.Empty)
+            {
+                e.Cancel = true;
+            }
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)

@@ -36,11 +36,13 @@
             this.dependantsTableAdapter = new ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.DependantsTableAdapter();
             this.reabonnementsTableAdapter = new ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.ReabonnementsTableAdapter();
             this.dgAbonnements = new System.Windows.Forms.DataGridView();
+            this.provincesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reabonnementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dependantsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgDependants = new System.Windows.Forms.DataGridView();
             this.btnEnregistrer = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
+            this.provincesTableAdapter = new ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.ProvincesTableAdapter();
             this.dgTxtIdDependant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgTxtNomDependant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgTxtPrenomDependant = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,8 +50,6 @@
             this.dgTxtDateNaissanceDependant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgTxtIdAbonnement = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgTxtRemarqueDependant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.provincesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.provincesTableAdapter = new ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.ProvincesTableAdapter();
             this.dgTxtId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgTxtDateAbonnement = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgTxtNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,10 +69,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bDB56Projet2GSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.abonnementsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgAbonnements)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reabonnementsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dependantsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDependants)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bDB56Projet2GSDataSet
@@ -149,6 +149,11 @@
             this.dgAbonnements.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgAbonnements_DataError);
             this.dgAbonnements.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgAbonnements_RowValidating);
             // 
+            // provincesBindingSource
+            // 
+            this.provincesBindingSource.DataMember = "Provinces";
+            this.provincesBindingSource.DataSource = this.bDB56Projet2GSDataSet;
+            // 
             // reabonnementsBindingSource
             // 
             this.reabonnementsBindingSource.DataMember = "FK__Reabonnem__IdAbo__571DF1D5";
@@ -180,6 +185,8 @@
             this.dgDependants.Name = "dgDependants";
             this.dgDependants.Size = new System.Drawing.Size(909, 220);
             this.dgDependants.TabIndex = 1;
+            this.dgDependants.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgDependants_DataError);
+            this.dgDependants.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgDependants_RowValidating);
             // 
             // btnEnregistrer
             // 
@@ -201,6 +208,10 @@
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
+            // provincesTableAdapter
+            // 
+            this.provincesTableAdapter.ClearBeforeFill = true;
+            // 
             // dgTxtIdDependant
             // 
             this.dgTxtIdDependant.DataPropertyName = "Id";
@@ -212,18 +223,21 @@
             // 
             this.dgTxtNomDependant.DataPropertyName = "Nom";
             this.dgTxtNomDependant.HeaderText = "Nom";
+            this.dgTxtNomDependant.MaxInputLength = 50;
             this.dgTxtNomDependant.Name = "dgTxtNomDependant";
             // 
             // dgTxtPrenomDependant
             // 
             this.dgTxtPrenomDependant.DataPropertyName = "Prenom";
             this.dgTxtPrenomDependant.HeaderText = "Prenom";
+            this.dgTxtPrenomDependant.MaxInputLength = 50;
             this.dgTxtPrenomDependant.Name = "dgTxtPrenomDependant";
             // 
             // dgTxtSexeDependant
             // 
             this.dgTxtSexeDependant.DataPropertyName = "Sexe";
             this.dgTxtSexeDependant.HeaderText = "Sexe";
+            this.dgTxtSexeDependant.MaxInputLength = 1;
             this.dgTxtSexeDependant.Name = "dgTxtSexeDependant";
             // 
             // dgTxtDateNaissanceDependant
@@ -246,15 +260,6 @@
             this.dgTxtRemarqueDependant.HeaderText = "Remarque";
             this.dgTxtRemarqueDependant.Name = "dgTxtRemarqueDependant";
             // 
-            // provincesBindingSource
-            // 
-            this.provincesBindingSource.DataMember = "Provinces";
-            this.provincesBindingSource.DataSource = this.bDB56Projet2GSDataSet;
-            // 
-            // provincesTableAdapter
-            // 
-            this.provincesTableAdapter.ClearBeforeFill = true;
-            // 
             // dgTxtId
             // 
             this.dgTxtId.DataPropertyName = "Id";
@@ -273,6 +278,7 @@
             // 
             this.dgTxtNom.DataPropertyName = "Nom";
             this.dgTxtNom.HeaderText = "Nom";
+            this.dgTxtNom.MaxInputLength = 50;
             this.dgTxtNom.Name = "dgTxtNom";
             this.dgTxtNom.ReadOnly = true;
             // 
@@ -280,12 +286,14 @@
             // 
             this.dgTxtPrenom.DataPropertyName = "Prenom";
             this.dgTxtPrenom.HeaderText = "Prenom";
+            this.dgTxtPrenom.MaxInputLength = 50;
             this.dgTxtPrenom.Name = "dgTxtPrenom";
             // 
             // dgTxtSexe
             // 
             this.dgTxtSexe.DataPropertyName = "Sexe";
             this.dgTxtSexe.HeaderText = "Sexe";
+            this.dgTxtSexe.MaxInputLength = 1;
             this.dgTxtSexe.Name = "dgTxtSexe";
             // 
             // dgTxtDateNaissance
@@ -377,10 +385,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bDB56Projet2GSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.abonnementsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgAbonnements)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reabonnementsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dependantsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDependants)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -399,6 +407,8 @@
         private System.Windows.Forms.DataGridView dgDependants;
         private System.Windows.Forms.Button btnEnregistrer;
         private System.Windows.Forms.Button btnAnnuler;
+        private System.Windows.Forms.BindingSource provincesBindingSource;
+        private BDB56Projet2GSDataSetTableAdapters.ProvincesTableAdapter provincesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtIdDependant;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtNomDependant;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtPrenomDependant;
@@ -406,8 +416,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtDateNaissanceDependant;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtIdAbonnement;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtRemarqueDependant;
-        private System.Windows.Forms.BindingSource provincesBindingSource;
-        private BDB56Projet2GSDataSetTableAdapters.ProvincesTableAdapter provincesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtDateAbonnement;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtNom;
