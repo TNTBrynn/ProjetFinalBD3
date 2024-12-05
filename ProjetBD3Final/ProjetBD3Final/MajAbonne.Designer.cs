@@ -33,43 +33,46 @@
             this.abonnementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.abonnementsTableAdapter = new ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.AbonnementsTableAdapter();
             this.tableAdapterManager = new ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.TableAdapterManager();
-            this.abonnementsDataGridView = new System.Windows.Forms.DataGridView();
-            this.reabonnementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reabonnementsTableAdapter = new ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.ReabonnementsTableAdapter();
-            this.dependantsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dependantsTableAdapter = new ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.DependantsTableAdapter();
-            this.dependantsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reabonnementsTableAdapter = new ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.ReabonnementsTableAdapter();
+            this.dgAbonnements = new System.Windows.Forms.DataGridView();
+            this.reabonnementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dependantsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dgDependants = new System.Windows.Forms.DataGridView();
             this.btnEnregistrer = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
+            this.dgTxtIdDependant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtNomDependant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtPrenomDependant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtSexeDependant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtDateNaissanceDependant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtIdAbonnement = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtRemarqueDependant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.provincesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.provincesTableAdapter = new ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.ProvincesTableAdapter();
+            this.dgTxtId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtDateAbonnement = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtPrenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtSexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtDateNaissance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtNoCivique = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtRue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtVille = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtIdProvince = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgTxtCodePostal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtTelephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtCellulaire = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtCourriel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtNoTypeAbonnement = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTxtRemarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bDB56Projet2GSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.abonnementsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.abonnementsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAbonnements)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reabonnementsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dependantsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dependantsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDependants)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bDB56Projet2GSDataSet
@@ -103,224 +106,80 @@
             this.tableAdapterManager.TypesEmployeTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ProjetBD3Final.BDB56Projet2GSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // abonnementsDataGridView
+            // dependantsTableAdapter
             // 
-            this.abonnementsDataGridView.AllowUserToAddRows = false;
-            this.abonnementsDataGridView.AllowUserToDeleteRows = false;
-            this.abonnementsDataGridView.AllowUserToResizeRows = false;
-            this.abonnementsDataGridView.AutoGenerateColumns = false;
-            this.abonnementsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.abonnementsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.abonnementsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16});
-            this.abonnementsDataGridView.DataSource = this.abonnementsBindingSource;
-            this.abonnementsDataGridView.Location = new System.Drawing.Point(12, 12);
-            this.abonnementsDataGridView.MultiSelect = false;
-            this.abonnementsDataGridView.Name = "abonnementsDataGridView";
-            this.abonnementsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.abonnementsDataGridView.Size = new System.Drawing.Size(1278, 220);
-            this.abonnementsDataGridView.TabIndex = 1;
+            this.dependantsTableAdapter.ClearBeforeFill = true;
+            // 
+            // reabonnementsTableAdapter
+            // 
+            this.reabonnementsTableAdapter.ClearBeforeFill = true;
+            // 
+            // dgAbonnements
+            // 
+            this.dgAbonnements.AllowUserToAddRows = false;
+            this.dgAbonnements.AllowUserToDeleteRows = false;
+            this.dgAbonnements.AllowUserToResizeRows = false;
+            this.dgAbonnements.AutoGenerateColumns = false;
+            this.dgAbonnements.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgAbonnements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAbonnements.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgTxtId,
+            this.dgTxtDateAbonnement,
+            this.dgTxtNom,
+            this.dgTxtPrenom,
+            this.dgTxtSexe,
+            this.dgTxtDateNaissance,
+            this.dgTxtNoCivique,
+            this.dgTxtRue,
+            this.dgTxtVille,
+            this.dgTxtIdProvince,
+            this.dgTxtCodePostal,
+            this.dgTxtTelephone,
+            this.dgTxtCellulaire,
+            this.dgTxtCourriel,
+            this.dgTxtNoTypeAbonnement,
+            this.dgTxtRemarque});
+            this.dgAbonnements.DataSource = this.abonnementsBindingSource;
+            this.dgAbonnements.Location = new System.Drawing.Point(12, 12);
+            this.dgAbonnements.MultiSelect = false;
+            this.dgAbonnements.Name = "dgAbonnements";
+            this.dgAbonnements.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgAbonnements.Size = new System.Drawing.Size(1278, 220);
+            this.dgAbonnements.TabIndex = 1;
+            this.dgAbonnements.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgAbonnements_DataError);
+            this.dgAbonnements.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgAbonnements_RowValidating);
             // 
             // reabonnementsBindingSource
             // 
             this.reabonnementsBindingSource.DataMember = "FK__Reabonnem__IdAbo__571DF1D5";
             this.reabonnementsBindingSource.DataSource = this.abonnementsBindingSource;
             // 
-            // reabonnementsTableAdapter
-            // 
-            this.reabonnementsTableAdapter.ClearBeforeFill = true;
-            // 
             // dependantsBindingSource
             // 
             this.dependantsBindingSource.DataMember = "FK__Dependant__IdAbo__47DBAE45";
             this.dependantsBindingSource.DataSource = this.abonnementsBindingSource;
             // 
-            // dependantsTableAdapter
+            // dgDependants
             // 
-            this.dependantsTableAdapter.ClearBeforeFill = true;
-            // 
-            // dependantsDataGridView
-            // 
-            this.dependantsDataGridView.AllowUserToAddRows = false;
-            this.dependantsDataGridView.AllowUserToDeleteRows = false;
-            this.dependantsDataGridView.AutoGenerateColumns = false;
-            this.dependantsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dependantsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dependantsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23});
-            this.dependantsDataGridView.DataSource = this.dependantsBindingSource;
-            this.dependantsDataGridView.Location = new System.Drawing.Point(12, 238);
-            this.dependantsDataGridView.MultiSelect = false;
-            this.dependantsDataGridView.Name = "dependantsDataGridView";
-            this.dependantsDataGridView.Size = new System.Drawing.Size(909, 220);
-            this.dependantsDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "DateAbonnement";
-            this.dataGridViewTextBoxColumn2.HeaderText = "DateAbonnement";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Nom";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Nom";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Prenom";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Prenom";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Sexe";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Sexe";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "DateNaissance";
-            this.dataGridViewTextBoxColumn6.HeaderText = "DateNaissance";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "NoCivique";
-            this.dataGridViewTextBoxColumn7.HeaderText = "NoCivique";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Rue";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Rue";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Ville";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Ville";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "IdProvince";
-            this.dataGridViewTextBoxColumn10.HeaderText = "IdProvince";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "CodePostal";
-            this.dataGridViewTextBoxColumn11.HeaderText = "CodePostal";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Telephone";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Telephone";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Cellulaire";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Cellulaire";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Courriel";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Courriel";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "NoTypeAbonnement";
-            this.dataGridViewTextBoxColumn15.HeaderText = "NoTypeAbonnement";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "Remarque";
-            this.dataGridViewTextBoxColumn16.HeaderText = "Remarque";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn17.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "Nom";
-            this.dataGridViewTextBoxColumn18.HeaderText = "Nom";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "Prenom";
-            this.dataGridViewTextBoxColumn19.HeaderText = "Prenom";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "Sexe";
-            this.dataGridViewTextBoxColumn20.HeaderText = "Sexe";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "DateNaissance";
-            this.dataGridViewTextBoxColumn21.HeaderText = "DateNaissance";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "IdAbonnement";
-            this.dataGridViewTextBoxColumn22.HeaderText = "IdAbonnement";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "Remarque";
-            this.dataGridViewTextBoxColumn23.HeaderText = "Remarque";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dgDependants.AllowUserToAddRows = false;
+            this.dgDependants.AllowUserToDeleteRows = false;
+            this.dgDependants.AutoGenerateColumns = false;
+            this.dgDependants.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgDependants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDependants.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgTxtIdDependant,
+            this.dgTxtNomDependant,
+            this.dgTxtPrenomDependant,
+            this.dgTxtSexeDependant,
+            this.dgTxtDateNaissanceDependant,
+            this.dgTxtIdAbonnement,
+            this.dgTxtRemarqueDependant});
+            this.dgDependants.DataSource = this.dependantsBindingSource;
+            this.dgDependants.Location = new System.Drawing.Point(12, 238);
+            this.dgDependants.MultiSelect = false;
+            this.dgDependants.Name = "dgDependants";
+            this.dgDependants.Size = new System.Drawing.Size(909, 220);
+            this.dgDependants.TabIndex = 1;
             // 
             // btnEnregistrer
             // 
@@ -342,6 +201,167 @@
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
+            // dgTxtIdDependant
+            // 
+            this.dgTxtIdDependant.DataPropertyName = "Id";
+            this.dgTxtIdDependant.HeaderText = "Id";
+            this.dgTxtIdDependant.Name = "dgTxtIdDependant";
+            this.dgTxtIdDependant.ReadOnly = true;
+            // 
+            // dgTxtNomDependant
+            // 
+            this.dgTxtNomDependant.DataPropertyName = "Nom";
+            this.dgTxtNomDependant.HeaderText = "Nom";
+            this.dgTxtNomDependant.Name = "dgTxtNomDependant";
+            // 
+            // dgTxtPrenomDependant
+            // 
+            this.dgTxtPrenomDependant.DataPropertyName = "Prenom";
+            this.dgTxtPrenomDependant.HeaderText = "Prenom";
+            this.dgTxtPrenomDependant.Name = "dgTxtPrenomDependant";
+            // 
+            // dgTxtSexeDependant
+            // 
+            this.dgTxtSexeDependant.DataPropertyName = "Sexe";
+            this.dgTxtSexeDependant.HeaderText = "Sexe";
+            this.dgTxtSexeDependant.Name = "dgTxtSexeDependant";
+            // 
+            // dgTxtDateNaissanceDependant
+            // 
+            this.dgTxtDateNaissanceDependant.DataPropertyName = "DateNaissance";
+            this.dgTxtDateNaissanceDependant.HeaderText = "DateNaissance";
+            this.dgTxtDateNaissanceDependant.Name = "dgTxtDateNaissanceDependant";
+            this.dgTxtDateNaissanceDependant.ReadOnly = true;
+            // 
+            // dgTxtIdAbonnement
+            // 
+            this.dgTxtIdAbonnement.DataPropertyName = "IdAbonnement";
+            this.dgTxtIdAbonnement.HeaderText = "IdAbonnement";
+            this.dgTxtIdAbonnement.Name = "dgTxtIdAbonnement";
+            this.dgTxtIdAbonnement.ReadOnly = true;
+            // 
+            // dgTxtRemarqueDependant
+            // 
+            this.dgTxtRemarqueDependant.DataPropertyName = "Remarque";
+            this.dgTxtRemarqueDependant.HeaderText = "Remarque";
+            this.dgTxtRemarqueDependant.Name = "dgTxtRemarqueDependant";
+            // 
+            // provincesBindingSource
+            // 
+            this.provincesBindingSource.DataMember = "Provinces";
+            this.provincesBindingSource.DataSource = this.bDB56Projet2GSDataSet;
+            // 
+            // provincesTableAdapter
+            // 
+            this.provincesTableAdapter.ClearBeforeFill = true;
+            // 
+            // dgTxtId
+            // 
+            this.dgTxtId.DataPropertyName = "Id";
+            this.dgTxtId.HeaderText = "Id";
+            this.dgTxtId.Name = "dgTxtId";
+            this.dgTxtId.ReadOnly = true;
+            // 
+            // dgTxtDateAbonnement
+            // 
+            this.dgTxtDateAbonnement.DataPropertyName = "DateAbonnement";
+            this.dgTxtDateAbonnement.HeaderText = "DateAbonnement";
+            this.dgTxtDateAbonnement.Name = "dgTxtDateAbonnement";
+            this.dgTxtDateAbonnement.ReadOnly = true;
+            // 
+            // dgTxtNom
+            // 
+            this.dgTxtNom.DataPropertyName = "Nom";
+            this.dgTxtNom.HeaderText = "Nom";
+            this.dgTxtNom.Name = "dgTxtNom";
+            this.dgTxtNom.ReadOnly = true;
+            // 
+            // dgTxtPrenom
+            // 
+            this.dgTxtPrenom.DataPropertyName = "Prenom";
+            this.dgTxtPrenom.HeaderText = "Prenom";
+            this.dgTxtPrenom.Name = "dgTxtPrenom";
+            // 
+            // dgTxtSexe
+            // 
+            this.dgTxtSexe.DataPropertyName = "Sexe";
+            this.dgTxtSexe.HeaderText = "Sexe";
+            this.dgTxtSexe.Name = "dgTxtSexe";
+            // 
+            // dgTxtDateNaissance
+            // 
+            this.dgTxtDateNaissance.DataPropertyName = "DateNaissance";
+            this.dgTxtDateNaissance.HeaderText = "DateNaissance";
+            this.dgTxtDateNaissance.Name = "dgTxtDateNaissance";
+            this.dgTxtDateNaissance.ReadOnly = true;
+            // 
+            // dgTxtNoCivique
+            // 
+            this.dgTxtNoCivique.DataPropertyName = "NoCivique";
+            this.dgTxtNoCivique.HeaderText = "NoCivique";
+            this.dgTxtNoCivique.MaxInputLength = 6;
+            this.dgTxtNoCivique.Name = "dgTxtNoCivique";
+            // 
+            // dgTxtRue
+            // 
+            this.dgTxtRue.DataPropertyName = "Rue";
+            this.dgTxtRue.HeaderText = "Rue";
+            this.dgTxtRue.Name = "dgTxtRue";
+            // 
+            // dgTxtVille
+            // 
+            this.dgTxtVille.DataPropertyName = "Ville";
+            this.dgTxtVille.HeaderText = "Ville";
+            this.dgTxtVille.Name = "dgTxtVille";
+            // 
+            // dgTxtIdProvince
+            // 
+            this.dgTxtIdProvince.DataPropertyName = "IdProvince";
+            this.dgTxtIdProvince.DataSource = this.provincesBindingSource;
+            this.dgTxtIdProvince.DisplayMember = "Nom";
+            this.dgTxtIdProvince.HeaderText = "IdProvince";
+            this.dgTxtIdProvince.Name = "dgTxtIdProvince";
+            this.dgTxtIdProvince.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgTxtIdProvince.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgTxtIdProvince.ValueMember = "Id";
+            // 
+            // dgTxtCodePostal
+            // 
+            this.dgTxtCodePostal.DataPropertyName = "CodePostal";
+            this.dgTxtCodePostal.HeaderText = "CodePostal";
+            this.dgTxtCodePostal.Name = "dgTxtCodePostal";
+            // 
+            // dgTxtTelephone
+            // 
+            this.dgTxtTelephone.DataPropertyName = "Telephone";
+            this.dgTxtTelephone.HeaderText = "Telephone";
+            this.dgTxtTelephone.Name = "dgTxtTelephone";
+            // 
+            // dgTxtCellulaire
+            // 
+            this.dgTxtCellulaire.DataPropertyName = "Cellulaire";
+            this.dgTxtCellulaire.HeaderText = "Cellulaire";
+            this.dgTxtCellulaire.Name = "dgTxtCellulaire";
+            // 
+            // dgTxtCourriel
+            // 
+            this.dgTxtCourriel.DataPropertyName = "Courriel";
+            this.dgTxtCourriel.HeaderText = "Courriel";
+            this.dgTxtCourriel.Name = "dgTxtCourriel";
+            // 
+            // dgTxtNoTypeAbonnement
+            // 
+            this.dgTxtNoTypeAbonnement.DataPropertyName = "NoTypeAbonnement";
+            this.dgTxtNoTypeAbonnement.HeaderText = "NoTypeAbonnement";
+            this.dgTxtNoTypeAbonnement.Name = "dgTxtNoTypeAbonnement";
+            this.dgTxtNoTypeAbonnement.ReadOnly = true;
+            // 
+            // dgTxtRemarque
+            // 
+            this.dgTxtRemarque.DataPropertyName = "Remarque";
+            this.dgTxtRemarque.HeaderText = "Remarque";
+            this.dgTxtRemarque.Name = "dgTxtRemarque";
+            // 
             // MajAbonne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,17 +369,18 @@
             this.ClientSize = new System.Drawing.Size(1310, 579);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnEnregistrer);
-            this.Controls.Add(this.dependantsDataGridView);
-            this.Controls.Add(this.abonnementsDataGridView);
+            this.Controls.Add(this.dgDependants);
+            this.Controls.Add(this.dgAbonnements);
             this.Name = "MajAbonne";
             this.Text = "Mise à jour des abonnés";
             this.Load += new System.EventHandler(this.MajAbonne_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bDB56Projet2GSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.abonnementsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.abonnementsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAbonnements)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reabonnementsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dependantsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dependantsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDependants)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -371,35 +392,37 @@
         private BDB56Projet2GSDataSetTableAdapters.AbonnementsTableAdapter abonnementsTableAdapter;
         private BDB56Projet2GSDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private BDB56Projet2GSDataSetTableAdapters.ReabonnementsTableAdapter reabonnementsTableAdapter;
-        private System.Windows.Forms.DataGridView abonnementsDataGridView;
+        private System.Windows.Forms.DataGridView dgAbonnements;
         private System.Windows.Forms.BindingSource reabonnementsBindingSource;
         private BDB56Projet2GSDataSetTableAdapters.DependantsTableAdapter dependantsTableAdapter;
         private System.Windows.Forms.BindingSource dependantsBindingSource;
-        private System.Windows.Forms.DataGridView dependantsDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridView dgDependants;
         private System.Windows.Forms.Button btnEnregistrer;
         private System.Windows.Forms.Button btnAnnuler;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtIdDependant;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtNomDependant;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtPrenomDependant;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtSexeDependant;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtDateNaissanceDependant;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtIdAbonnement;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtRemarqueDependant;
+        private System.Windows.Forms.BindingSource provincesBindingSource;
+        private BDB56Projet2GSDataSetTableAdapters.ProvincesTableAdapter provincesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtDateAbonnement;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtNom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtPrenom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtSexe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtDateNaissance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtNoCivique;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtRue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtVille;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgTxtIdProvince;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtCodePostal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtTelephone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtCellulaire;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtCourriel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtNoTypeAbonnement;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgTxtRemarque;
     }
 }
