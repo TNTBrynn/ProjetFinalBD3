@@ -41,5 +41,37 @@ namespace ProjetBD3Final
             gestionPrix.FormClosed += (s, args) => this.Show();
             gestionPrix.Show();
         }
+
+        private void btnAbonnement_Click(object sender, EventArgs e)
+        {
+            Abonnement abonnement = new Abonnement();
+            this.Hide();
+            abonnement.FormClosed += (s, args) => this.Show();
+            abonnement.Show();
+        }
+
+        private void btnReabonnement_Click(object sender, EventArgs e)
+        {
+            Reabonnement reabonnement = new Reabonnement();
+            this.Hide();
+            reabonnement.FormClosed += (s, args) => this.Show();
+            reabonnement.Show();
+        }
+
+        private void btnMajAbonne_Click(object sender, EventArgs e)
+        {
+            MajAbonne majAbonne = new MajAbonne();
+            this.Hide();
+            majAbonne.FormClosed += (s, args) => this.Show();
+            majAbonne.Show();
+        }
+
+        private void btnInscriptionPartie_Click(object sender, EventArgs e)
+        {
+            InscriptionPartie inscriptionPartie = new InscriptionPartie();
+            this.Hide();
+            inscriptionPartie.FormClosed += (s, args) => this.Show();
+            inscriptionPartie.Show();
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace ProjetBD3Final
                     tbMdp.Text = employee.MotDePasse;
                     tbNom.Text = employee.Nom;
                     tbPrenom.Text = employee.Prenom;
-                    tbSexe.Text = employee.Sexe;
+                    tbSexe.Text = employee.Sexe.ToString();
                     tbAge.Text = employee.Age.ToString();
                     tbNoCiv.Text = employee.NoCivique.ToString();
                     tbRue.Text = employee.Rue;
@@ -171,7 +171,7 @@ namespace ProjetBD3Final
                     employee.MotDePasse = tbMdp.Text;
                     employee.Nom = tbNom.Text;
                     employee.Prenom = tbPrenom.Text;
-                    employee.Sexe = tbSexe.Text;
+                    employee.Sexe = Convert.ToChar(tbSexe.Text);
                     employee.Age = int.Parse(tbAge.Text);
                     employee.NoCivique = int.Parse(tbNoCiv.Text);
                     employee.Rue = tbRue.Text;
