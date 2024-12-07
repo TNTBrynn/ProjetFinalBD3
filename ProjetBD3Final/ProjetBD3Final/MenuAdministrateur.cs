@@ -73,5 +73,13 @@ namespace ProjetBD3Final
             inscriptionPartie.FormClosed += (s, args) => this.Show();
             inscriptionPartie.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            InscriptionDepense gestionPrix = new InscriptionDepense();
+            this.Hide();
+            gestionPrix.FormClosed += (s, args) => this.Show();
+            gestionPrix.Show();
+        }
     }
 }
