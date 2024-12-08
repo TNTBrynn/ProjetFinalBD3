@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.Common;
+using System.Data.Linq;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Transactions;
 using System.Windows.Forms;
 
 namespace ProjetBD3Final
@@ -21,6 +25,26 @@ namespace ProjetBD3Final
                 {
                     ((TextBox)control).Clear();
                 }
+            }
+            PopulateCombox();
+        }
+
+        private void PopulateCombox()
+        {
+            using (var db = new BDB56Projet2GSDataContext("Data Source=tcp:424sql.cgodin.qc.ca,5433;Initial Catalog=BDB56Projet2GS;Persist Security Info=True;User ID=B56Projet2GS;Password=Password1;TrustServerCertificate=True"))
+            {
+                var provinces = from province in db.Provinces
+                                select province.Id;
+
+                cbProvinces.DataSource = provinces.ToList();
+
+                var typeEmploye = from type in db.TypesEmploye
+                                  where type.No != 1
+                                  select new { type.No, type.Description };
+
+                cbType.DisplayMember = "Description";
+                cbType.ValueMember = "No";
+                cbType.DataSource = typeEmploye.ToList();
             }
         }
 
@@ -54,42 +78,91 @@ namespace ProjetBD3Final
 
             using (var db = new BDB56Projet2GSDataContext("Data Source=tcp:424sql.cgodin.qc.ca,5433;Initial Catalog=BDB56Projet2GS;Persist Security Info=True;User ID=B56Projet2GS;Password=Password1;TrustServerCertificate=True"))
             {
-                // Get the next employee number
-                int nextNo = db.Employes.Max(emp => emp.No) + 1;
-
-                string phone = new string(tbTel.Text.Where(char.IsDigit).ToArray());
-                string cellphone = new string(tbCell.Text.Where(char.IsDigit).ToArray());
-
-                string input = tbCode.Text;
-                string result = input.Replace(" ", "");
-
-                // Create a new employee
-                var newEmployee = new Employes
+                db.Connection.Open();
+                using (var transaction = db.Connection.BeginTransaction())
                 {
-                    No = nextNo,
-                    MotDePasse = tbMdp.Text,
-                    Nom = tbNom.Text,
-                    Prenom = tbPrenom.Text,
-                    Sexe = Convert.ToChar(tbSexe.Text),
-                    Age = int.Parse(tbAge.Text),
-                    NoCivique = int.Parse(tbNoCiv.Text),
-                    Rue = tbRue.Text,
-                    Ville = tbVille.Text,
-                    IdProvince = tbProvince.Text,
-                    CodePostal = result,
-                    Telephone = phone,
-                    Cellulaire = cellphone,
-                    Courriel = tbCourriel.Text,
-                    SalaireHoraire = decimal.Parse(tbSalaire.Text),
-                    NoTypeEmploye = 2,
-                    Remarque = tbRemarque.Text
-                };
+                    try
+                    {
+                        db.Transaction = transaction;
+                        // Get the next employee number
+                        int nextNo = db.Employes.Max(emp => emp.No) + 1;
 
-                db.Employes.InsertOnSubmit(newEmployee);
-                db.SubmitChanges();
+                        string phone = new string(tbTel.Text.Where(char.IsDigit).ToArray());
+                        string cellphone = new string(tbCell.Text.Where(char.IsDigit).ToArray());
 
-                MessageBox.Show("Employé ajouté avec succès", "Confirmation d'ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                        string input = tbCode.Text;
+                        string result = input.Replace(" ", "");
+
+                        // Create a new employee
+                        var newEmployee = new Employes
+                        {
+                            No = nextNo,
+                            MotDePasse = tbMdp.Text,
+                            Nom = tbNom.Text,
+                            Prenom = tbPrenom.Text,
+                            Sexe = Convert.ToChar(tbSexe.Text),
+                            Age = int.Parse(tbAge.Text),
+                            NoCivique = int.Parse(tbNoCiv.Text),
+                            Rue = tbRue.Text,
+                            Ville = tbVille.Text,
+                            IdProvince = cbProvinces.SelectedValue.ToString(),
+                            CodePostal = result,
+                            Telephone = phone,
+                            Cellulaire = cellphone,
+                            Courriel = tbCourriel.Text,
+                            SalaireHoraire = decimal.Parse(tbSalaire.Text),
+                            NoTypeEmploye = (int)cbType.SelectedValue,
+                            Remarque = tbRemarque.Text
+                        };
+
+                        db.Employes.InsertOnSubmit(newEmployee);
+                        db.SubmitChanges();
+
+                        var servicesToAdd = new List<string>();
+                        switch (newEmployee.NoTypeEmploye)
+                        {
+                            case 2:
+                            case 3:
+                                servicesToAdd.AddRange(new[] { "Magasin Pro Shop", "Restaurant", "Leçon de golf" });
+                                break;
+                            case 5:
+                                servicesToAdd.Add("Magasin Pro Shop");
+                                break;
+                            case 6:
+                                servicesToAdd.Add("Restaurant");
+                                break;
+                            case 7:
+                                servicesToAdd.Add("Leçon de golf");
+                                break;
+                        }
+
+                        int nextServiceNo = db.Services.Any() ? db.Services.Max(s => s.No) + 1 : 1;
+
+                        foreach (var service in servicesToAdd)
+                        {
+                            var serviceEntity = new Services
+                            {
+                                No = nextServiceNo++,
+                                NoEmploye = newEmployee.No,
+                                TypeService = service
+                            };
+                            db.Services.InsertOnSubmit(serviceEntity);
+                        }
+
+                        db.SubmitChanges();
+                        transaction.Commit();
+                        db.Connection.Close();
+                        MessageBox.Show("Employé ajouté avec succès", "Confirmation d'ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Une erreur est survenue lors de l'ajout de l'employé. Veuillez réessayer.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        transaction.Rollback();
+                    }
+                }
             }
         }
 
@@ -148,14 +221,6 @@ namespace ProjetBD3Final
             if (string.IsNullOrWhiteSpace(tbVille.Text))
             {
                 validationMessage = "La ville ne peut pas être vide.";
-                return false;
-            }
-
-            // Validate tbProvince
-            string[] provinces = { "AB", "BC", "MB", "NB", "NL", "NS", "ON", "PE", "QC", "SK" };
-            if (!provinces.Contains(tbProvince.Text))
-            {
-                validationMessage = "La province doit être l'une des suivantes : AB, BC, MB, NB, NL, NS, ON, PE, QC, SK.";
                 return false;
             }
 
