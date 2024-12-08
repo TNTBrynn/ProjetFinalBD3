@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +48,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abonnement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abonnement.Designer.cs">
+      <DependentUpon>Abonnement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbonnementDependants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbonnementDependants.Designer.cs">
+      <DependentUpon>AbonnementDependants.cs</DependentUpon>
+    </Compile>
     <Compile Include="AjoutEmp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,12 +67,19 @@
       <DependentUpon>AjoutEmp.cs</DependentUpon>
     </Compile>
     <Compile Include="BDB56Projet2GSDataContext.cs" />
+    <Compile Include="BDB56Projet2GSDataSet.cs">
+      <DependentUpon>BDB56Projet2GSDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BDB56Projet2GSDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BDB56Projet2GSDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Employe.cs" />
+    <Compile Include="DataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </Compile>
     <Compile Include="GestionEmp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +91,24 @@
     </Compile>
     <Compile Include="GestionPrix.Designer.cs">
       <DependentUpon>GestionPrix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InscriptionDepense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InscriptionDepense.Designer.cs">
+      <DependentUpon>InscriptionDepense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InscriptionPartie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InscriptionPartie.Designer.cs">
+      <DependentUpon>InscriptionPartie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MajAbonne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MajAbonne.Designer.cs">
+      <DependentUpon>MajAbonne.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuAdministrateur.cs">
       <SubType>Form</SubType>
@@ -92,6 +130,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reabonnement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reabonnement.Designer.cs">
+      <DependentUpon>Reabonnement.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Abonnement.resx">
+      <DependentUpon>Abonnement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbonnementDependants.resx">
+      <DependentUpon>AbonnementDependants.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AjoutEmp.resx">
       <DependentUpon>AjoutEmp.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +150,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionPrix.resx">
       <DependentUpon>GestionPrix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InscriptionDepense.resx">
+      <DependentUpon>InscriptionDepense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InscriptionPartie.resx">
+      <DependentUpon>InscriptionPartie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MajAbonne.resx">
+      <DependentUpon>MajAbonne.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAdministrateur.resx">
       <DependentUpon>MenuAdministrateur.cs</DependentUpon>
@@ -119,6 +178,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reabonnement.resx">
+      <DependentUpon>Reabonnement.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="BDB56Projet2GSDataSet.xsc">
       <DependentUpon>BDB56Projet2GSDataSet.xsd</DependentUpon>
     </None>
@@ -129,6 +191,14 @@
     </None>
     <None Include="BDB56Projet2GSDataSet.xss">
       <DependentUpon>BDB56Projet2GSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataClasses.dbml.layout">
+      <DependentUpon>DataClasses.dbml</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -142,6 +212,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

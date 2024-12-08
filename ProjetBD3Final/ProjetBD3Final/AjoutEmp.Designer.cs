@@ -60,15 +60,15 @@
             this.tbRue = new System.Windows.Forms.TextBox();
             this.tbVille = new System.Windows.Forms.TextBox();
             this.tbCourriel = new System.Windows.Forms.TextBox();
-            this.tbType = new System.Windows.Forms.TextBox();
             this.tbRemarque = new System.Windows.Forms.TextBox();
             this.btnAjout = new System.Windows.Forms.Button();
             this.tbCell = new System.Windows.Forms.MaskedTextBox();
             this.tbTel = new System.Windows.Forms.MaskedTextBox();
-            this.tbProvince = new System.Windows.Forms.MaskedTextBox();
             this.tbCode = new System.Windows.Forms.MaskedTextBox();
             this.tbSalaire = new System.Windows.Forms.TextBox();
             this.btnRetour = new System.Windows.Forms.Button();
+            this.cbType = new System.Windows.Forms.ComboBox();
+            this.cbProvinces = new System.Windows.Forms.ComboBox();
             noLabel = new System.Windows.Forms.Label();
             motDePasseLabel = new System.Windows.Forms.Label();
             nomLabel = new System.Windows.Forms.Label();
@@ -93,7 +93,7 @@
             // noLabel
             // 
             noLabel.AutoSize = true;
-            noLabel.Location = new System.Drawing.Point(42, 46);
+            noLabel.Location = new System.Drawing.Point(43, 46);
             noLabel.Name = "noLabel";
             noLabel.Size = new System.Drawing.Size(125, 16);
             noLabel.TabIndex = 1;
@@ -102,7 +102,7 @@
             // motDePasseLabel
             // 
             motDePasseLabel.AutoSize = true;
-            motDePasseLabel.Location = new System.Drawing.Point(42, 74);
+            motDePasseLabel.Location = new System.Drawing.Point(43, 74);
             motDePasseLabel.Name = "motDePasseLabel";
             motDePasseLabel.Size = new System.Drawing.Size(93, 16);
             motDePasseLabel.TabIndex = 3;
@@ -111,7 +111,7 @@
             // nomLabel
             // 
             nomLabel.AutoSize = true;
-            nomLabel.Location = new System.Drawing.Point(42, 102);
+            nomLabel.Location = new System.Drawing.Point(43, 102);
             nomLabel.Name = "nomLabel";
             nomLabel.Size = new System.Drawing.Size(39, 16);
             nomLabel.TabIndex = 5;
@@ -120,7 +120,7 @@
             // prenomLabel
             // 
             prenomLabel.AutoSize = true;
-            prenomLabel.Location = new System.Drawing.Point(42, 130);
+            prenomLabel.Location = new System.Drawing.Point(43, 130);
             prenomLabel.Name = "prenomLabel";
             prenomLabel.Size = new System.Drawing.Size(57, 16);
             prenomLabel.TabIndex = 7;
@@ -129,7 +129,7 @@
             // sexeLabel
             // 
             sexeLabel.AutoSize = true;
-            sexeLabel.Location = new System.Drawing.Point(42, 158);
+            sexeLabel.Location = new System.Drawing.Point(43, 158);
             sexeLabel.Name = "sexeLabel";
             sexeLabel.Size = new System.Drawing.Size(41, 16);
             sexeLabel.TabIndex = 9;
@@ -138,7 +138,7 @@
             // ageLabel
             // 
             ageLabel.AutoSize = true;
-            ageLabel.Location = new System.Drawing.Point(42, 186);
+            ageLabel.Location = new System.Drawing.Point(43, 186);
             ageLabel.Name = "ageLabel";
             ageLabel.Size = new System.Drawing.Size(35, 16);
             ageLabel.TabIndex = 11;
@@ -279,6 +279,7 @@
             this.noTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "No", true));
             this.noTextBox.Enabled = false;
             this.noTextBox.Location = new System.Drawing.Point(168, 43);
+            this.noTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.noTextBox.Name = "noTextBox";
             this.noTextBox.Size = new System.Drawing.Size(100, 22);
             this.noTextBox.TabIndex = 2;
@@ -287,6 +288,7 @@
             // 
             this.tbMdp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "MotDePasse", true));
             this.tbMdp.Location = new System.Drawing.Point(168, 71);
+            this.tbMdp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbMdp.Name = "tbMdp";
             this.tbMdp.Size = new System.Drawing.Size(100, 22);
             this.tbMdp.TabIndex = 4;
@@ -294,7 +296,8 @@
             // tbNom
             // 
             this.tbNom.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "Nom", true));
-            this.tbNom.Location = new System.Drawing.Point(168, 99);
+            this.tbNom.Location = new System.Drawing.Point(168, 98);
+            this.tbNom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbNom.Name = "tbNom";
             this.tbNom.Size = new System.Drawing.Size(100, 22);
             this.tbNom.TabIndex = 6;
@@ -303,6 +306,7 @@
             // 
             this.tbPrenom.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "Prenom", true));
             this.tbPrenom.Location = new System.Drawing.Point(168, 127);
+            this.tbPrenom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPrenom.Name = "tbPrenom";
             this.tbPrenom.Size = new System.Drawing.Size(100, 22);
             this.tbPrenom.TabIndex = 8;
@@ -311,6 +315,8 @@
             // 
             this.tbSexe.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "Sexe", true));
             this.tbSexe.Location = new System.Drawing.Point(168, 155);
+            this.tbSexe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSexe.MaxLength = 1;
             this.tbSexe.Name = "tbSexe";
             this.tbSexe.Size = new System.Drawing.Size(100, 22);
             this.tbSexe.TabIndex = 10;
@@ -319,6 +325,7 @@
             // 
             this.tbAge.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "Age", true));
             this.tbAge.Location = new System.Drawing.Point(168, 183);
+            this.tbAge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbAge.Name = "tbAge";
             this.tbAge.Size = new System.Drawing.Size(100, 22);
             this.tbAge.TabIndex = 12;
@@ -327,6 +334,7 @@
             // 
             this.tbNoCiv.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "NoCivique", true));
             this.tbNoCiv.Location = new System.Drawing.Point(411, 43);
+            this.tbNoCiv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbNoCiv.Name = "tbNoCiv";
             this.tbNoCiv.Size = new System.Drawing.Size(100, 22);
             this.tbNoCiv.TabIndex = 14;
@@ -335,6 +343,7 @@
             // 
             this.tbRue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "Rue", true));
             this.tbRue.Location = new System.Drawing.Point(411, 71);
+            this.tbRue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbRue.Name = "tbRue";
             this.tbRue.Size = new System.Drawing.Size(100, 22);
             this.tbRue.TabIndex = 16;
@@ -342,7 +351,8 @@
             // tbVille
             // 
             this.tbVille.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "Ville", true));
-            this.tbVille.Location = new System.Drawing.Point(411, 99);
+            this.tbVille.Location = new System.Drawing.Point(411, 98);
+            this.tbVille.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbVille.Name = "tbVille";
             this.tbVille.Size = new System.Drawing.Size(100, 22);
             this.tbVille.TabIndex = 18;
@@ -352,25 +362,16 @@
             // 
             this.tbCourriel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "Courriel", true));
             this.tbCourriel.Location = new System.Drawing.Point(661, 95);
+            this.tbCourriel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbCourriel.Name = "tbCourriel";
             this.tbCourriel.Size = new System.Drawing.Size(100, 22);
             this.tbCourriel.TabIndex = 28;
             // 
-            // tbType
-            // 
-            this.tbType.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "NoTypeEmploye", true));
-            this.tbType.Enabled = false;
-            this.tbType.Location = new System.Drawing.Point(661, 151);
-            this.tbType.Name = "tbType";
-            this.tbType.Size = new System.Drawing.Size(100, 22);
-            this.tbType.TabIndex = 32;
-            this.tbType.Text = "2";
-            this.tbType.TextChanged += new System.EventHandler(this.noTypeEmployeTextBox_TextChanged);
-            // 
             // tbRemarque
             // 
             this.tbRemarque.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "Remarque", true));
-            this.tbRemarque.Location = new System.Drawing.Point(661, 179);
+            this.tbRemarque.Location = new System.Drawing.Point(661, 178);
+            this.tbRemarque.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbRemarque.Name = "tbRemarque";
             this.tbRemarque.Size = new System.Drawing.Size(163, 22);
             this.tbRemarque.TabIndex = 34;
@@ -378,6 +379,7 @@
             // btnAjout
             // 
             this.btnAjout.Location = new System.Drawing.Point(100, 282);
+            this.btnAjout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAjout.Name = "btnAjout";
             this.btnAjout.Size = new System.Drawing.Size(168, 55);
             this.btnAjout.TabIndex = 35;
@@ -388,6 +390,7 @@
             // tbCell
             // 
             this.tbCell.Location = new System.Drawing.Point(661, 70);
+            this.tbCell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbCell.Mask = "(000) 000-0000";
             this.tbCell.Name = "tbCell";
             this.tbCell.Size = new System.Drawing.Size(100, 22);
@@ -396,24 +399,16 @@
             // tbTel
             // 
             this.tbTel.Location = new System.Drawing.Point(661, 42);
+            this.tbTel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbTel.Mask = "(000) 000-0000";
             this.tbTel.Name = "tbTel";
             this.tbTel.Size = new System.Drawing.Size(100, 22);
             this.tbTel.TabIndex = 37;
             // 
-            // tbProvince
-            // 
-            this.tbProvince.Location = new System.Drawing.Point(411, 127);
-            this.tbProvince.Mask = ">LL";
-            this.tbProvince.Name = "tbProvince";
-            this.tbProvince.PromptChar = ' ';
-            this.tbProvince.Size = new System.Drawing.Size(100, 22);
-            this.tbProvince.TabIndex = 39;
-            this.tbProvince.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.tbProvince_MaskInputRejected);
-            // 
             // tbCode
             // 
             this.tbCode.Location = new System.Drawing.Point(411, 155);
+            this.tbCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbCode.Mask = ">A0A 0A0";
             this.tbCode.Name = "tbCode";
             this.tbCode.PromptChar = ' ';
@@ -424,13 +419,15 @@
             // tbSalaire
             // 
             this.tbSalaire.Location = new System.Drawing.Point(661, 124);
+            this.tbSalaire.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSalaire.Name = "tbSalaire";
             this.tbSalaire.Size = new System.Drawing.Size(100, 22);
             this.tbSalaire.TabIndex = 41;
             // 
             // btnRetour
             // 
-            this.btnRetour.Location = new System.Drawing.Point(538, 282);
+            this.btnRetour.Location = new System.Drawing.Point(539, 282);
+            this.btnRetour.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRetour.Name = "btnRetour";
             this.btnRetour.Size = new System.Drawing.Size(168, 53);
             this.btnRetour.TabIndex = 42;
@@ -438,15 +435,32 @@
             this.btnRetour.UseVisualStyleBackColor = true;
             this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
             // 
+            // cbType
+            // 
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Location = new System.Drawing.Point(661, 150);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(163, 24);
+            this.cbType.TabIndex = 43;
+            // 
+            // cbProvinces
+            // 
+            this.cbProvinces.FormattingEnabled = true;
+            this.cbProvinces.Location = new System.Drawing.Point(411, 127);
+            this.cbProvinces.Name = "cbProvinces";
+            this.cbProvinces.Size = new System.Drawing.Size(100, 24);
+            this.cbProvinces.TabIndex = 44;
+            // 
             // AjoutEmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 398);
+            this.Controls.Add(this.cbProvinces);
+            this.Controls.Add(this.cbType);
             this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.tbSalaire);
             this.Controls.Add(this.tbCode);
-            this.Controls.Add(this.tbProvince);
             this.Controls.Add(this.tbTel);
             this.Controls.Add(this.tbCell);
             this.Controls.Add(this.btnAjout);
@@ -476,9 +490,9 @@
             this.Controls.Add(this.tbCourriel);
             this.Controls.Add(salaireHoraireLabel);
             this.Controls.Add(noTypeEmployeLabel);
-            this.Controls.Add(this.tbType);
             this.Controls.Add(remarqueLabel);
             this.Controls.Add(this.tbRemarque);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AjoutEmp";
             this.Text = "Ajouter un employé";
             this.Load += new System.EventHandler(this.AjoutEmp_Load);
@@ -505,15 +519,15 @@
         private System.Windows.Forms.TextBox tbRue;
         private System.Windows.Forms.TextBox tbVille;
         private System.Windows.Forms.TextBox tbCourriel;
-        private System.Windows.Forms.TextBox tbType;
         private System.Windows.Forms.TextBox tbRemarque;
         private System.Windows.Forms.Button btnAjout;
         private System.Windows.Forms.MaskedTextBox tbCell;
         private System.Windows.Forms.MaskedTextBox tbTel;
-        private System.Windows.Forms.MaskedTextBox tbProvince;
         private System.Windows.Forms.MaskedTextBox tbCode;
 
         private System.Windows.Forms.TextBox tbSalaire;
         private System.Windows.Forms.Button btnRetour;
+        private System.Windows.Forms.ComboBox cbType;
+        private System.Windows.Forms.ComboBox cbProvinces;
     }
 }
