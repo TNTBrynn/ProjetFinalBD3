@@ -127,6 +127,12 @@
     <Compile Include="Reabonnement.Designer.cs">
       <DependentUpon>Reabonnement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Statistiques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistiques.Designer.cs">
+      <DependentUpon>Statistiques.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Abonnement.resx">
       <DependentUpon>Abonnement.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +174,9 @@
     </Compile>
     <EmbeddedResource Include="Reabonnement.resx">
       <DependentUpon>Reabonnement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistiques.resx">
+      <DependentUpon>Statistiques.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="BDB56Projet2GSDataSet.xsc">
       <DependentUpon>BDB56Projet2GSDataSet.xsd</DependentUpon>
