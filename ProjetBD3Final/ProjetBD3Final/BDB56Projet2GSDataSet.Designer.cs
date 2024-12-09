@@ -84,6 +84,8 @@ namespace ProjetBD3Final {
         
         private global::System.Data.DataRelation relationFK__Reabonnem__IdAbo__571DF1D51;
         
+        private global::System.Data.DataRelation relationFK__PrixDepen__NoTyp__59FA5E801;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -554,6 +556,7 @@ namespace ProjetBD3Final {
             this.relationFK__Depenses__IdAbon__4D94879B1 = this.Relations["FK__Depenses__IdAbon__4D94879B1"];
             this.relationFK__PartiesJo__IdAbo__534D60F11 = this.Relations["FK__PartiesJo__IdAbo__534D60F11"];
             this.relationFK__Reabonnem__IdAbo__571DF1D51 = this.Relations["FK__Reabonnem__IdAbo__571DF1D51"];
+            this.relationFK__PrixDepen__NoTyp__59FA5E801 = this.Relations["FK__PrixDepen__NoTyp__59FA5E801"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -656,6 +659,10 @@ namespace ProjetBD3Final {
                         this.tableAbonnementsDT.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableReabonnements.IdAbonnementColumn}, false);
             this.Relations.Add(this.relationFK__Reabonnem__IdAbo__571DF1D51);
+            this.relationFK__PrixDepen__NoTyp__59FA5E801 = new global::System.Data.DataRelation("FK__PrixDepen__NoTyp__59FA5E801", new global::System.Data.DataColumn[] {
+                        this.tableTypesAbonnement.NoColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtTypeEtPrixDepensesAbonnements.NoTypeAbonnementColumn}, false);
+            this.Relations.Add(this.relationFK__PrixDepen__NoTyp__59FA5E801);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5032,6 +5039,10 @@ namespace ProjetBD3Final {
             
             private global::System.Data.DataColumn columnDepensesObligatoires;
             
+            private global::System.Data.DataColumn columnAnnee;
+            
+            private global::System.Data.DataColumn columnNoTypeAbonnement;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public dtTypeEtPrixDepensesAbonnementsDataTable() {
@@ -5091,6 +5102,22 @@ namespace ProjetBD3Final {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AnneeColumn {
+                get {
+                    return this.columnAnnee;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NoTypeAbonnementColumn {
+                get {
+                    return this.columnNoTypeAbonnement;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5126,15 +5153,28 @@ namespace ProjetBD3Final {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public dtTypeEtPrixDepensesAbonnementsRow AdddtTypeEtPrixDepensesAbonnementsRow(string Description, decimal Prix, decimal DepensesObligatoires) {
+            public dtTypeEtPrixDepensesAbonnementsRow AdddtTypeEtPrixDepensesAbonnementsRow(string Description, decimal Prix, decimal DepensesObligatoires, int Annee, TypesAbonnementRow parentTypesAbonnementRowByFK__PrixDepen__NoTyp__59FA5E801) {
                 dtTypeEtPrixDepensesAbonnementsRow rowdtTypeEtPrixDepensesAbonnementsRow = ((dtTypeEtPrixDepensesAbonnementsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Description,
                         Prix,
-                        DepensesObligatoires};
+                        DepensesObligatoires,
+                        Annee,
+                        null};
+                if ((parentTypesAbonnementRowByFK__PrixDepen__NoTyp__59FA5E801 != null)) {
+                    columnValuesArray[4] = parentTypesAbonnementRowByFK__PrixDepen__NoTyp__59FA5E801[0];
+                }
                 rowdtTypeEtPrixDepensesAbonnementsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtTypeEtPrixDepensesAbonnementsRow);
                 return rowdtTypeEtPrixDepensesAbonnementsRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dtTypeEtPrixDepensesAbonnementsRow FindByAnneeNoTypeAbonnement(int Annee, int NoTypeAbonnement) {
+                return ((dtTypeEtPrixDepensesAbonnementsRow)(this.Rows.Find(new object[] {
+                            Annee,
+                            NoTypeAbonnement})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5157,6 +5197,8 @@ namespace ProjetBD3Final {
                 this.columnDescription = base.Columns["Description"];
                 this.columnPrix = base.Columns["Prix"];
                 this.columnDepensesObligatoires = base.Columns["DepensesObligatoires"];
+                this.columnAnnee = base.Columns["Annee"];
+                this.columnNoTypeAbonnement = base.Columns["NoTypeAbonnement"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5168,10 +5210,19 @@ namespace ProjetBD3Final {
                 base.Columns.Add(this.columnPrix);
                 this.columnDepensesObligatoires = new global::System.Data.DataColumn("DepensesObligatoires", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDepensesObligatoires);
+                this.columnAnnee = new global::System.Data.DataColumn("Annee", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAnnee);
+                this.columnNoTypeAbonnement = new global::System.Data.DataColumn("NoTypeAbonnement", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNoTypeAbonnement);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnAnnee,
+                                this.columnNoTypeAbonnement}, true));
                 this.columnDescription.AllowDBNull = false;
                 this.columnDescription.MaxLength = 100;
                 this.columnPrix.AllowDBNull = false;
                 this.columnDepensesObligatoires.AllowDBNull = false;
+                this.columnAnnee.AllowDBNull = false;
+                this.columnNoTypeAbonnement.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7068,6 +7119,17 @@ namespace ProjetBD3Final {
                     return ((PrixDepensesAbonnementsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__PrixDepen__NoTyp__59FA5E80"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dtTypeEtPrixDepensesAbonnementsRow[] GetdtTypeEtPrixDepensesAbonnementsRows() {
+                if ((this.Table.ChildRelations["FK__PrixDepen__NoTyp__59FA5E801"] == null)) {
+                    return new dtTypeEtPrixDepensesAbonnementsRow[0];
+                }
+                else {
+                    return ((dtTypeEtPrixDepensesAbonnementsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__PrixDepen__NoTyp__59FA5E801"])));
+                }
+            }
         }
         
         /// <summary>
@@ -7190,6 +7252,39 @@ namespace ProjetBD3Final {
                 }
                 set {
                     this[this.tabledtTypeEtPrixDepensesAbonnements.DepensesObligatoiresColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Annee {
+                get {
+                    return ((int)(this[this.tabledtTypeEtPrixDepensesAbonnements.AnneeColumn]));
+                }
+                set {
+                    this[this.tabledtTypeEtPrixDepensesAbonnements.AnneeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int NoTypeAbonnement {
+                get {
+                    return ((int)(this[this.tabledtTypeEtPrixDepensesAbonnements.NoTypeAbonnementColumn]));
+                }
+                set {
+                    this[this.tabledtTypeEtPrixDepensesAbonnements.NoTypeAbonnementColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TypesAbonnementRow TypesAbonnementRow {
+                get {
+                    return ((TypesAbonnementRow)(this.GetParentRow(this.Table.ParentRelations["FK__PrixDepen__NoTyp__59FA5E801"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__PrixDepen__NoTyp__59FA5E801"]);
                 }
             }
         }
@@ -12980,6 +13075,8 @@ SELECT No, Nom, NombreTrous, Description, Remarque FROM Terrains WHERE (No = @No
             tableMapping.ColumnMappings.Add("Description", "Description");
             tableMapping.ColumnMappings.Add("Prix", "Prix");
             tableMapping.ColumnMappings.Add("DepensesObligatoires", "DepensesObligatoires");
+            tableMapping.ColumnMappings.Add("Annee", "Annee");
+            tableMapping.ColumnMappings.Add("NoTypeAbonnement", "NoTypeAbonnement");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -12996,10 +13093,9 @@ SELECT No, Nom, NombreTrous, Description, Remarque FROM Terrains WHERE (No = @No
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT TypesAbonnement.Description, PrixDepensesAbonnements.Prix, PrixDepensesAbo" +
-                "nnements.DepensesObligatoires\r\nFROM     PrixDepensesAbonnements INNER JOIN\r\n    " +
-                "              TypesAbonnement ON PrixDepensesAbonnements.NoTypeAbonnement = Type" +
-                "sAbonnement.No";
+            this._commandCollection[0].CommandText = @"SELECT TypesAbonnement.Description, PrixDepensesAbonnements.Prix, PrixDepensesAbonnements.DepensesObligatoires, PrixDepensesAbonnements.Annee, PrixDepensesAbonnements.NoTypeAbonnement
+FROM     PrixDepensesAbonnements INNER JOIN
+                  TypesAbonnement ON PrixDepensesAbonnements.NoTypeAbonnement = TypesAbonnement.No";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

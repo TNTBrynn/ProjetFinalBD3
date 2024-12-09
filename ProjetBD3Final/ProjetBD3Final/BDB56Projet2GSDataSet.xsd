@@ -830,10 +830,10 @@ SELECT No, Description, Remarque FROM TypesEmploye WHERE (No = @No)</CommandText
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtTypeEtPrixDepensesAbonnementsTableAdapter" GeneratorDataComponentClassName="dtTypeEtPrixDepensesAbonnementsTableAdapter" Name="dtTypeEtPrixDepensesAbonnements" UserDataComponentName="dtTypeEtPrixDepensesAbonnementsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BDB56Projet2GSConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BDB56Projet2GSConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT TypesAbonnement.Description, PrixDepensesAbonnements.Prix, PrixDepensesAbonnements.DepensesObligatoires
+                    <CommandText>SELECT TypesAbonnement.Description, PrixDepensesAbonnements.Prix, PrixDepensesAbonnements.DepensesObligatoires, PrixDepensesAbonnements.Annee, PrixDepensesAbonnements.NoTypeAbonnement
 FROM     PrixDepensesAbonnements INNER JOIN
                   TypesAbonnement ON PrixDepensesAbonnements.NoTypeAbonnement = TypesAbonnement.No</CommandText>
                     <Parameters />
@@ -845,6 +845,8 @@ FROM     PrixDepensesAbonnements INNER JOIN
               <Mapping SourceColumn="Description" DataSetColumn="Description" />
               <Mapping SourceColumn="Prix" DataSetColumn="Prix" />
               <Mapping SourceColumn="DepensesObligatoires" DataSetColumn="DepensesObligatoires" />
+              <Mapping SourceColumn="Annee" DataSetColumn="Annee" />
+              <Mapping SourceColumn="NoTypeAbonnement" DataSetColumn="NoTypeAbonnement" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1317,32 +1319,34 @@ FROM     Abonnements</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="dtTypeEtPrixDepensesAbonnements" msprop:Generator_RowClassName="dtTypeEtPrixDepensesAbonnementsRow" msprop:Generator_RowEvHandlerName="dtTypeEtPrixDepensesAbonnementsRowChangeEventHandler" msprop:Generator_RowDeletedName="dtTypeEtPrixDepensesAbonnementsRowDeleted" msprop:Generator_RowDeletingName="dtTypeEtPrixDepensesAbonnementsRowDeleting" msprop:Generator_RowEvArgName="dtTypeEtPrixDepensesAbonnementsRowChangeEvent" msprop:Generator_TablePropName="dtTypeEtPrixDepensesAbonnements" msprop:Generator_RowChangedName="dtTypeEtPrixDepensesAbonnementsRowChanged" msprop:Generator_UserTableName="dtTypeEtPrixDepensesAbonnements" msprop:Generator_RowChangingName="dtTypeEtPrixDepensesAbonnementsRowChanging" msprop:Generator_TableClassName="dtTypeEtPrixDepensesAbonnementsDataTable" msprop:Generator_TableVarName="tabledtTypeEtPrixDepensesAbonnements">
+        <xs:element name="dtTypeEtPrixDepensesAbonnements" msprop:Generator_RowEvHandlerName="dtTypeEtPrixDepensesAbonnementsRowChangeEventHandler" msprop:Generator_RowDeletedName="dtTypeEtPrixDepensesAbonnementsRowDeleted" msprop:Generator_RowDeletingName="dtTypeEtPrixDepensesAbonnementsRowDeleting" msprop:Generator_RowEvArgName="dtTypeEtPrixDepensesAbonnementsRowChangeEvent" msprop:Generator_TablePropName="dtTypeEtPrixDepensesAbonnements" msprop:Generator_RowChangedName="dtTypeEtPrixDepensesAbonnementsRowChanged" msprop:Generator_UserTableName="dtTypeEtPrixDepensesAbonnements" msprop:Generator_RowChangingName="dtTypeEtPrixDepensesAbonnementsRowChanging" msprop:Generator_RowClassName="dtTypeEtPrixDepensesAbonnementsRow" msprop:Generator_TableClassName="dtTypeEtPrixDepensesAbonnementsDataTable" msprop:Generator_TableVarName="tabledtTypeEtPrixDepensesAbonnements">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnVarNameInTable="columnDescription">
+              <xs:element name="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnVarNameInTable="columnDescription">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Prix" msprop:Generator_UserColumnName="Prix" msprop:Generator_ColumnPropNameInTable="PrixColumn" msprop:Generator_ColumnPropNameInRow="Prix" msprop:Generator_ColumnVarNameInTable="columnPrix" type="xs:decimal" />
-              <xs:element name="DepensesObligatoires" msprop:Generator_UserColumnName="DepensesObligatoires" msprop:Generator_ColumnPropNameInTable="DepensesObligatoiresColumn" msprop:Generator_ColumnPropNameInRow="DepensesObligatoires" msprop:Generator_ColumnVarNameInTable="columnDepensesObligatoires" type="xs:decimal" />
+              <xs:element name="Prix" msprop:Generator_ColumnPropNameInTable="PrixColumn" msprop:Generator_ColumnPropNameInRow="Prix" msprop:Generator_UserColumnName="Prix" msprop:Generator_ColumnVarNameInTable="columnPrix" type="xs:decimal" />
+              <xs:element name="DepensesObligatoires" msprop:Generator_ColumnPropNameInTable="DepensesObligatoiresColumn" msprop:Generator_ColumnPropNameInRow="DepensesObligatoires" msprop:Generator_UserColumnName="DepensesObligatoires" msprop:Generator_ColumnVarNameInTable="columnDepensesObligatoires" type="xs:decimal" />
+              <xs:element name="Annee" msprop:Generator_UserColumnName="Annee" msprop:Generator_ColumnPropNameInTable="AnneeColumn" msprop:Generator_ColumnPropNameInRow="Annee" msprop:Generator_ColumnVarNameInTable="columnAnnee" type="xs:int" />
+              <xs:element name="NoTypeAbonnement" msprop:Generator_ColumnPropNameInRow="NoTypeAbonnement" msprop:Generator_ColumnPropNameInTable="NoTypeAbonnementColumn" msprop:Generator_ColumnVarNameInTable="columnNoTypeAbonnement" msprop:Generator_UserColumnName="NoTypeAbonnement" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AbonnementsDT" msprop:Generator_RowEvHandlerName="AbonnementsDTRowChangeEventHandler" msprop:Generator_RowDeletedName="AbonnementsDTRowDeleted" msprop:Generator_RowDeletingName="AbonnementsDTRowDeleting" msprop:Generator_RowEvArgName="AbonnementsDTRowChangeEvent" msprop:Generator_TablePropName="AbonnementsDT" msprop:Generator_RowChangedName="AbonnementsDTRowChanged" msprop:Generator_RowChangingName="AbonnementsDTRowChanging" msprop:Generator_TableClassName="AbonnementsDTDataTable" msprop:Generator_RowClassName="AbonnementsDTRow" msprop:Generator_TableVarName="tableAbonnementsDT" msprop:Generator_UserTableName="AbonnementsDT">
+        <xs:element name="AbonnementsDT" msprop:Generator_RowEvHandlerName="AbonnementsDTRowChangeEventHandler" msprop:Generator_RowDeletedName="AbonnementsDTRowDeleted" msprop:Generator_RowDeletingName="AbonnementsDTRowDeleting" msprop:Generator_RowEvArgName="AbonnementsDTRowChangeEvent" msprop:Generator_TablePropName="AbonnementsDT" msprop:Generator_RowChangedName="AbonnementsDTRowChanged" msprop:Generator_UserTableName="AbonnementsDT" msprop:Generator_RowChangingName="AbonnementsDTRowChanging" msprop:Generator_RowClassName="AbonnementsDTRow" msprop:Generator_TableClassName="AbonnementsDTDataTable" msprop:Generator_TableVarName="tableAbonnementsDT">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_UserColumnName="Id">
+              <xs:element name="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnVarNameInTable="columnId">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NomComplet" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="NomComplet" msprop:Generator_ColumnPropNameInTable="NomCompletColumn" msprop:Generator_ColumnVarNameInTable="columnNomComplet" msprop:Generator_UserColumnName="NomComplet" minOccurs="0">
+              <xs:element name="NomComplet" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="NomCompletColumn" msprop:Generator_ColumnPropNameInRow="NomComplet" msprop:Generator_UserColumnName="NomComplet" msprop:Generator_ColumnVarNameInTable="columnNomComplet" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="101" />
@@ -1406,6 +1410,11 @@ FROM     Abonnements</CommandText>
       <xs:selector xpath=".//mstns:TypesEmploye" />
       <xs:field xpath="mstns:No" />
     </xs:unique>
+    <xs:unique name="dtTypeEtPrixDepensesAbonnements_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dtTypeEtPrixDepensesAbonnements" />
+      <xs:field xpath="mstns:Annee" />
+      <xs:field xpath="mstns:NoTypeAbonnement" />
+    </xs:unique>
     <xs:unique name="AbonnementsDT_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:AbonnementsDT" />
       <xs:field xpath="mstns:Id" />
@@ -1425,10 +1434,11 @@ FROM     Abonnements</CommandText>
       <msdata:Relationship name="FK__PrixDepen__NoTyp__59FA5E80" msdata:parent="TypesAbonnement" msdata:child="PrixDepensesAbonnements" msdata:parentkey="No" msdata:childkey="NoTypeAbonnement" msprop:Generator_UserParentTable="TypesAbonnement" msprop:Generator_UserChildTable="PrixDepensesAbonnements" msprop:Generator_RelationVarName="relationFK__PrixDepen__NoTyp__59FA5E80" msprop:Generator_ChildPropName="GetPrixDepensesAbonnementsRows" msprop:Generator_UserRelationName="FK__PrixDepen__NoTyp__59FA5E80" msprop:Generator_ParentPropName="TypesAbonnementRow" />
       <msdata:Relationship name="FK__Reabonnem__IdAbo__571DF1D5" msdata:parent="Abonnements" msdata:child="Reabonnements" msdata:parentkey="Id" msdata:childkey="IdAbonnement" msprop:Generator_UserParentTable="Abonnements" msprop:Generator_UserChildTable="Reabonnements" msprop:Generator_RelationVarName="relationFK__Reabonnem__IdAbo__571DF1D5" msprop:Generator_ChildPropName="GetReabonnementsRows" msprop:Generator_ParentPropName="AbonnementsRow" msprop:Generator_UserRelationName="FK__Reabonnem__IdAbo__571DF1D5" />
       <msdata:Relationship name="FK__Services__NoEmpl__4AB81AF0" msdata:parent="Employes" msdata:child="Services" msdata:parentkey="No" msdata:childkey="NoEmploye" msprop:Generator_UserParentTable="Employes" msprop:Generator_UserChildTable="Services" msprop:Generator_RelationVarName="relationFK__Services__NoEmpl__4AB81AF0" msprop:Generator_ChildPropName="GetServicesRows" msprop:Generator_ParentPropName="EmployesRow" msprop:Generator_UserRelationName="FK__Services__NoEmpl__4AB81AF0" />
-      <msdata:Relationship name="FK__Dependant__IdAbo__47DBAE451" msdata:parent="AbonnementsDT" msdata:child="Dependants" msdata:parentkey="Id" msdata:childkey="IdAbonnement" msprop:Generator_UserParentTable="AbonnementsDT" msprop:Generator_UserChildTable="Dependants" msprop:Generator_RelationVarName="relationFK__Dependant__IdAbo__47DBAE451" msprop:Generator_UserRelationName="FK__Dependant__IdAbo__47DBAE451" msprop:Generator_ChildPropName="GetDependantsRows" msprop:Generator_ParentPropName="AbonnementsDTRow" />
-      <msdata:Relationship name="FK__Depenses__IdAbon__4D94879B1" msdata:parent="AbonnementsDT" msdata:child="Depenses" msdata:parentkey="Id" msdata:childkey="IdAbonnement" msprop:Generator_UserParentTable="AbonnementsDT" msprop:Generator_UserChildTable="Depenses" msprop:Generator_RelationVarName="relationFK__Depenses__IdAbon__4D94879B1" msprop:Generator_UserRelationName="FK__Depenses__IdAbon__4D94879B1" msprop:Generator_ChildPropName="GetDepensesRows" msprop:Generator_ParentPropName="AbonnementsDTRow" />
-      <msdata:Relationship name="FK__PartiesJo__IdAbo__534D60F11" msdata:parent="AbonnementsDT" msdata:child="PartiesJouees" msdata:parentkey="Id" msdata:childkey="IdAbonnement" msprop:Generator_UserParentTable="AbonnementsDT" msprop:Generator_UserChildTable="PartiesJouees" msprop:Generator_RelationVarName="relationFK__PartiesJo__IdAbo__534D60F11" msprop:Generator_UserRelationName="FK__PartiesJo__IdAbo__534D60F11" msprop:Generator_ChildPropName="GetPartiesJoueesRows" msprop:Generator_ParentPropName="AbonnementsDTRow" />
-      <msdata:Relationship name="FK__Reabonnem__IdAbo__571DF1D51" msdata:parent="AbonnementsDT" msdata:child="Reabonnements" msdata:parentkey="Id" msdata:childkey="IdAbonnement" msprop:Generator_UserParentTable="AbonnementsDT" msprop:Generator_UserChildTable="Reabonnements" msprop:Generator_RelationVarName="relationFK__Reabonnem__IdAbo__571DF1D51" msprop:Generator_UserRelationName="FK__Reabonnem__IdAbo__571DF1D51" msprop:Generator_ChildPropName="GetReabonnementsRows" msprop:Generator_ParentPropName="AbonnementsDTRow" />
+      <msdata:Relationship name="FK__Dependant__IdAbo__47DBAE451" msdata:parent="AbonnementsDT" msdata:child="Dependants" msdata:parentkey="Id" msdata:childkey="IdAbonnement" msprop:Generator_UserParentTable="AbonnementsDT" msprop:Generator_UserChildTable="Dependants" msprop:Generator_RelationVarName="relationFK__Dependant__IdAbo__47DBAE451" msprop:Generator_ChildPropName="GetDependantsRows" msprop:Generator_UserRelationName="FK__Dependant__IdAbo__47DBAE451" msprop:Generator_ParentPropName="AbonnementsDTRow" />
+      <msdata:Relationship name="FK__Depenses__IdAbon__4D94879B1" msdata:parent="AbonnementsDT" msdata:child="Depenses" msdata:parentkey="Id" msdata:childkey="IdAbonnement" msprop:Generator_UserParentTable="AbonnementsDT" msprop:Generator_UserChildTable="Depenses" msprop:Generator_RelationVarName="relationFK__Depenses__IdAbon__4D94879B1" msprop:Generator_ChildPropName="GetDepensesRows" msprop:Generator_UserRelationName="FK__Depenses__IdAbon__4D94879B1" msprop:Generator_ParentPropName="AbonnementsDTRow" />
+      <msdata:Relationship name="FK__PartiesJo__IdAbo__534D60F11" msdata:parent="AbonnementsDT" msdata:child="PartiesJouees" msdata:parentkey="Id" msdata:childkey="IdAbonnement" msprop:Generator_UserParentTable="AbonnementsDT" msprop:Generator_UserChildTable="PartiesJouees" msprop:Generator_RelationVarName="relationFK__PartiesJo__IdAbo__534D60F11" msprop:Generator_ChildPropName="GetPartiesJoueesRows" msprop:Generator_UserRelationName="FK__PartiesJo__IdAbo__534D60F11" msprop:Generator_ParentPropName="AbonnementsDTRow" />
+      <msdata:Relationship name="FK__Reabonnem__IdAbo__571DF1D51" msdata:parent="AbonnementsDT" msdata:child="Reabonnements" msdata:parentkey="Id" msdata:childkey="IdAbonnement" msprop:Generator_UserParentTable="AbonnementsDT" msprop:Generator_UserChildTable="Reabonnements" msprop:Generator_RelationVarName="relationFK__Reabonnem__IdAbo__571DF1D51" msprop:Generator_ChildPropName="GetReabonnementsRows" msprop:Generator_UserRelationName="FK__Reabonnem__IdAbo__571DF1D51" msprop:Generator_ParentPropName="AbonnementsDTRow" />
+      <msdata:Relationship name="FK__PrixDepen__NoTyp__59FA5E801" msdata:parent="TypesAbonnement" msdata:child="dtTypeEtPrixDepensesAbonnements" msdata:parentkey="No" msdata:childkey="NoTypeAbonnement" msprop:Generator_UserParentTable="TypesAbonnement" msprop:Generator_UserChildTable="dtTypeEtPrixDepensesAbonnements" msprop:Generator_RelationVarName="relationFK__PrixDepen__NoTyp__59FA5E801" msprop:Generator_ChildPropName="GetdtTypeEtPrixDepensesAbonnementsRows" msprop:Generator_ParentPropName="TypesAbonnementRow" msprop:Generator_UserRelationName="FK__PrixDepen__NoTyp__59FA5E801" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

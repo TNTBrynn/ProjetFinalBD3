@@ -151,7 +151,7 @@ namespace ProjetBD3Final
 
                         db.SubmitChanges();
                         transaction.Commit();
-                        db.Connection.Close();
+                        db.Connection.Close ();
                         MessageBox.Show("Employé ajouté avec succès", "Confirmation d'ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
