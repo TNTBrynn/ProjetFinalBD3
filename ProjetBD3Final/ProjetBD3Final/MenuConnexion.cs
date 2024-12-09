@@ -47,14 +47,10 @@ namespace ProjetBD3Final
 
             reader.Close();
             connexion.Close();
-
-            if (idTypeUtilisateur == 1)
-            {
                 MenuAdministrateur menuAdmin = new MenuAdministrateur(idUtilisateur);
                 this.Hide();
                 menuAdmin.FormClosed += (s, args) => this.Show();
                 menuAdmin.Show();
-            }
         }
 
         private void tbNomUtilisateur_TextChanged(object sender, EventArgs e)
