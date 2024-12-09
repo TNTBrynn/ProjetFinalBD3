@@ -80,6 +80,7 @@ namespace ProjetBD3Final
             this.Hide();
             statistiques.FormClosed += (s, args) => this.Show();
             statistiques.Show();
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             InscriptionDepense gestionPrix = new InscriptionDepense(IdUtilisateur);
