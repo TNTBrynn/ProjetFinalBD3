@@ -74,6 +74,13 @@ namespace ProjetBD3Final
             inscriptionPartie.Show();
         }
 
+        private void btnStatistiques_Click(object sender, EventArgs e)
+        {
+            Statistiques statistiques = new Statistiques();
+            this.Hide();
+            statistiques.FormClosed += (s, args) => this.Show();
+            statistiques.Show();
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             InscriptionDepense gestionPrix = new InscriptionDepense(IdUtilisateur);

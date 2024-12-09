@@ -35,14 +35,15 @@
             this.btnReabonnement = new System.Windows.Forms.Button();
             this.btnMajAbonne = new System.Windows.Forms.Button();
             this.btnInscriptionPartie = new System.Windows.Forms.Button();
+            this.btnStatistiques = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(45, 63);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(34, 51);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 46);
+            this.button1.Size = new System.Drawing.Size(128, 37);
             this.button1.TabIndex = 0;
             this.button1.Text = "Gestion des employés";
             this.button1.UseVisualStyleBackColor = true;
@@ -50,10 +51,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(301, 63);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(226, 51);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(171, 46);
+            this.button2.Size = new System.Drawing.Size(128, 37);
             this.button2.TabIndex = 1;
             this.button2.Text = "Gestion des prix";
             this.button2.UseVisualStyleBackColor = true;
@@ -61,10 +62,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(569, 63);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Location = new System.Drawing.Point(427, 51);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(171, 46);
+            this.button3.Size = new System.Drawing.Size(128, 37);
             this.button3.TabIndex = 2;
             this.button3.Text = "Inscripton d\'un dépense";
             this.button3.UseVisualStyleBackColor = true;
@@ -72,10 +73,10 @@
             // 
             // btnAbonnement
             // 
-            this.btnAbonnement.Location = new System.Drawing.Point(45, 183);
-            this.btnAbonnement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAbonnement.Location = new System.Drawing.Point(34, 149);
+            this.btnAbonnement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAbonnement.Name = "btnAbonnement";
-            this.btnAbonnement.Size = new System.Drawing.Size(171, 46);
+            this.btnAbonnement.Size = new System.Drawing.Size(128, 37);
             this.btnAbonnement.TabIndex = 4;
             this.btnAbonnement.Text = "Abonnement";
             this.btnAbonnement.UseVisualStyleBackColor = true;
@@ -83,10 +84,10 @@
             // 
             // btnReabonnement
             // 
-            this.btnReabonnement.Location = new System.Drawing.Point(301, 183);
-            this.btnReabonnement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReabonnement.Location = new System.Drawing.Point(226, 149);
+            this.btnReabonnement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReabonnement.Name = "btnReabonnement";
-            this.btnReabonnement.Size = new System.Drawing.Size(171, 46);
+            this.btnReabonnement.Size = new System.Drawing.Size(128, 37);
             this.btnReabonnement.TabIndex = 5;
             this.btnReabonnement.Text = "Réabonnement";
             this.btnReabonnement.UseVisualStyleBackColor = true;
@@ -94,10 +95,10 @@
             // 
             // btnMajAbonne
             // 
-            this.btnMajAbonne.Location = new System.Drawing.Point(569, 183);
-            this.btnMajAbonne.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMajAbonne.Location = new System.Drawing.Point(427, 149);
+            this.btnMajAbonne.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMajAbonne.Name = "btnMajAbonne";
-            this.btnMajAbonne.Size = new System.Drawing.Size(171, 46);
+            this.btnMajAbonne.Size = new System.Drawing.Size(128, 37);
             this.btnMajAbonne.TabIndex = 6;
             this.btnMajAbonne.Text = "Mise à jour abonnés";
             this.btnMajAbonne.UseVisualStyleBackColor = true;
@@ -105,20 +106,32 @@
             // 
             // btnInscriptionPartie
             // 
-            this.btnInscriptionPartie.Location = new System.Drawing.Point(45, 304);
-            this.btnInscriptionPartie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnInscriptionPartie.Location = new System.Drawing.Point(11, 247);
+            this.btnInscriptionPartie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInscriptionPartie.Name = "btnInscriptionPartie";
-            this.btnInscriptionPartie.Size = new System.Drawing.Size(216, 46);
+            this.btnInscriptionPartie.Size = new System.Drawing.Size(162, 37);
             this.btnInscriptionPartie.TabIndex = 7;
             this.btnInscriptionPartie.Text = "Inscription d\'une partie jouée";
             this.btnInscriptionPartie.UseVisualStyleBackColor = true;
             this.btnInscriptionPartie.Click += new System.EventHandler(this.btnInscriptionPartie_Click);
             // 
+            // btnStatistiques
+            // 
+            this.btnStatistiques.Location = new System.Drawing.Point(226, 247);
+            this.btnStatistiques.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStatistiques.Name = "btnStatistiques";
+            this.btnStatistiques.Size = new System.Drawing.Size(128, 37);
+            this.btnStatistiques.TabIndex = 8;
+            this.btnStatistiques.Text = "Statistiques";
+            this.btnStatistiques.UseVisualStyleBackColor = true;
+            this.btnStatistiques.Click += new System.EventHandler(this.btnStatistiques_Click);
+            // 
             // MenuAdministrateur
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btnStatistiques);
             this.Controls.Add(this.btnInscriptionPartie);
             this.Controls.Add(this.btnMajAbonne);
             this.Controls.Add(this.btnReabonnement);
@@ -126,7 +139,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MenuAdministrateur";
             this.Text = "MenuAdministrateur";
             this.Load += new System.EventHandler(this.MenuAdministrateur_Load);
@@ -143,5 +156,6 @@
         private System.Windows.Forms.Button btnReabonnement;
         private System.Windows.Forms.Button btnMajAbonne;
         private System.Windows.Forms.Button btnInscriptionPartie;
+        private System.Windows.Forms.Button btnStatistiques;
     }
 }
