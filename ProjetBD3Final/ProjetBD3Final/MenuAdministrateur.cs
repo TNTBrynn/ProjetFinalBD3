@@ -14,15 +14,76 @@ namespace ProjetBD3Final
     {
 
         private int IdUtilisateur;
+        private int idTypeUtilisateur;
 
-        public MenuAdministrateur(int idUtilisateur)
+        public MenuAdministrateur(int idUtilisateur, int IdTypeUtilisateur)
         {
             InitializeComponent();
             IdUtilisateur = idUtilisateur;
+            idTypeUtilisateur = IdTypeUtilisateur;
         }
 
         private void MenuAdministrateur_Load(object sender, EventArgs e)
         {
+            if (idTypeUtilisateur == 1)
+            {
+                
+            }
+            else if (idTypeUtilisateur == 2)
+            {
+                btnAbonnement.Enabled = false;
+                btnReabonnement.Enabled = false;
+                btnMajAbonne.Enabled = false;
+                btnInscriptionPartie.Enabled = false;
+            }
+            else if (idTypeUtilisateur == 3)
+            {
+                button1.Enabled = false;
+            }
+            else if (idTypeUtilisateur == 4)
+            {
+                button1.Enabled = false;
+                button2.Enabled = false;
+                btnAbonnement.Enabled = false;
+                btnReabonnement.Enabled = false;
+                btnMajAbonne.Enabled = false;
+                btnStatistiques.Enabled = false;
+                button4.Enabled = false;
+                button3.Enabled = false;
+            }
+            else if (idTypeUtilisateur == 5)
+            {
+                button1.Enabled = false;
+                button2.Enabled = false;
+                btnAbonnement.Enabled = false;
+                btnReabonnement.Enabled = false;
+                btnMajAbonne.Enabled = false;
+                btnStatistiques.Enabled = false;
+                button4.Enabled = false;
+
+            }
+            else if (idTypeUtilisateur == 6)
+            {
+                button1.Enabled = false;
+                button2.Enabled = false;
+                btnAbonnement.Enabled = false;
+                btnReabonnement.Enabled = false;
+                btnMajAbonne.Enabled = false;
+                btnStatistiques.Enabled = false;
+                button4.Enabled = false;
+            }
+            else
+            {
+                button1.Enabled = false;
+                button2.Enabled = false;
+                btnAbonnement.Enabled = false;
+                btnReabonnement.Enabled = false;
+                btnMajAbonne.Enabled = false;
+                btnStatistiques.Enabled = false;
+                button4.Enabled = false;
+            }
+
+
 
         }
 

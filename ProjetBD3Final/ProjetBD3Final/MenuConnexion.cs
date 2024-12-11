@@ -47,7 +47,7 @@ namespace ProjetBD3Final
 
             reader.Close();
             connexion.Close();
-                MenuAdministrateur menuAdmin = new MenuAdministrateur(idUtilisateur);
+                MenuAdministrateur menuAdmin = new MenuAdministrateur(idUtilisateur, idTypeUtilisateur);
                 this.Hide();
                 menuAdmin.FormClosed += (s, args) => this.Show();
                 menuAdmin.Show();
@@ -72,11 +72,11 @@ namespace ProjetBD3Final
 
         private FormManager() { }
 
-        public MenuAdministrateur MenuAdministrateur(int currentUserId)
+        public MenuAdministrateur MenuAdministrateur(int currentUserId, int IdTypeUtilisateur)
         {
             if (menuAdministrateur == null || menuAdministrateur.IsDisposed)
             {
-                menuAdministrateur = new MenuAdministrateur(currentUserId);
+                menuAdministrateur = new MenuAdministrateur(currentUserId, IdTypeUtilisateur);
             }
             return menuAdministrateur;
 
