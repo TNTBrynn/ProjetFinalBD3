@@ -24,14 +24,11 @@ namespace ProjetBD3Final
         {
             // TODO: cette ligne de code charge les données dans la table 'bDB56Projet2GSDataSet.Terrains'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.terrainsTableAdapter.Fill(this.bDB56Projet2GSDataSet.Terrains);
-            var abonnementNonRenouvele = from abonnement in dataContext.Abonnements
-                                         where abonnement.DateAbonnement.AddYears(1) < DateTime.Now &&
-                                         (!abonnement.Reabonnements.Any() ||
-                                         abonnement.Reabonnements.Max(r => r.DateRenouvellement).AddYears(1) < DateTime.Now)
-                                         select abonnement;
 
             var abonnementValide = from abonnement in dataContext.Abonnements
-                                   where !abonnement.Equals(abonnementNonRenouvele)
+                                   let maxDateRenouvellement = abonnement.Reabonnements.Any() ? abonnement.Reabonnements.Max(r => r.DateRenouvellement) : (DateTime?)null
+                                   where abonnement.DateAbonnement.AddYears(1) >= DateTime.Now ||
+                                         (maxDateRenouvellement.HasValue && maxDateRenouvellement.Value.AddYears(1) >= DateTime.Now)
                                    select new
                                    {
                                        Id = abonnement.Id,
