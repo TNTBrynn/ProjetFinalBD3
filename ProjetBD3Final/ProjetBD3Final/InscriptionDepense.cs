@@ -12,9 +12,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ProjetBD3Final
 {
-
     public partial class InscriptionDepense : Form
     {
+        DataClassesDataContext dataContext = new DataClassesDataContext();
         private int loggedInUserNo;
         public InscriptionDepense(int loggedInUserNo)
         {
@@ -28,8 +28,14 @@ namespace ProjetBD3Final
             this.servicesTableAdapter.Fill(this.bDB56Projet2GSDataSet.Services);
             // TODO: This line of code loads data into the 'bDB56Projet2GSDataSet.AbonnementsDT' table. You can move, or remove it, as needed.
             this.abonnementsDTTableAdapter.Fill(this.bDB56Projet2GSDataSet.AbonnementsDT);
-            // TODO: This line of code loads data into the 'bDB56Projet2GSDataSet.Abonnements' table. You can move, or remove it, as needed.
-            this.abonnementsTableAdapter.Fill(this.bDB56Projet2GSDataSet.Abonnements);
+            //// TODO: This line of code loads data into the 'bDB56Projet2GSDataSet.Abonnements' table. You can move, or remove it, as needed.
+            //this.abonnementsTableAdapter.Fill(this.bDB56Projet2GSDataSet.Abonnements);
+            var requete = from abonnement in dataContext.Abonnements
+                          let maxDateRenouvellement = abonnement.Reabonnements.Any() ? abonnement.Reabonnements.Max(r => r.DateRenouvellement) : (DateTime?)null
+                          where abonnement.DateAbonnement.AddYears(1) >= DateTime.Now ||
+                                (maxDateRenouvellement.HasValue && maxDateRenouvellement.Value.AddYears(1) >= DateTime.Now)
+                          select abonnement;
+            dgAbonnes.DataSource = requete;
             PopulateComboBox();
 
         }
