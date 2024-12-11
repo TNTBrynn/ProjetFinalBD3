@@ -97,7 +97,8 @@ namespace ProjetBD3Final
                             DateDepense = DateTime.Today,
                             Montant = numMontant.Value,
                             NoService = noService,
-                            Remarque = remarque
+                            Remarque = remarque,
+                            idEmploye = loggedInUserNo
                         };
 
                         db.Depenses.InsertOnSubmit(newDepense);

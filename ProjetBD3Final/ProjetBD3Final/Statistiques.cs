@@ -93,5 +93,10 @@ namespace ProjetBD3Final
             dgDepensesAnneeCourante.DataSource = depensesParAnnee;
             dgDepensesParAnnee.DataSource = depensesParMois;
         }
+
+        private void dgAbonnementParAnnee_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

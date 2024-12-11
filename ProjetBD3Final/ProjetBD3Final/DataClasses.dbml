@@ -54,6 +54,7 @@
       <Column Name="Montant" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="NoService" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Remarque" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="idEmploye" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="true" />
       <Association Name="Abonnements_Depenses" Member="Abonnements" ThisKey="IdAbonnement" OtherKey="Id" Type="Abonnements" IsForeignKey="true" />
       <Association Name="Services_Depenses" Member="Services" ThisKey="NoService" OtherKey="No" Type="Services" IsForeignKey="true" />
     </Type>

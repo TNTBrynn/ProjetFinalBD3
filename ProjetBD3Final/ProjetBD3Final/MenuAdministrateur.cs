@@ -88,5 +88,13 @@ namespace ProjetBD3Final
             gestionPrix.FormClosed += (s, args) => this.Show();
             gestionPrix.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Rapport rapport = new Rapport();
+            this.Hide();
+            rapport.FormClosed += (s, args) => this.Show();
+            rapport.Show();
+        }
     }
 }
