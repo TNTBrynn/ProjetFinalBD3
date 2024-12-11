@@ -22,14 +22,6 @@ namespace ProjetBD3Final
             this.loggedInUserNo = loggedInUserNo;
         }
 
-        private void abonnementsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.abonnementsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDB56Projet2GSDataSet);
-
-        }
-
         private void InscriptionDepense_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'bDB56Projet2GSDataSet.Services' table. You can move, or remove it, as needed.

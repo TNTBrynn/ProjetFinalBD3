@@ -22,14 +22,6 @@ namespace ProjetBD3Final
             dataContext.Connection.Open();
         }
 
-        private void abonnementsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.abonnementsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDB56Projet2GSDataSet);
-
-        }
-
         private void MajAbonne_Load(object sender, EventArgs e)
         {
             // TODO: cette ligne de code charge les données dans la table 'bDB56Projet2GSDataSet.Provinces'. Vous pouvez la déplacer ou la supprimer selon les besoins.
