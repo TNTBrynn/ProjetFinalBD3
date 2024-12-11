@@ -28,20 +28,12 @@ namespace ProjetBD3Final
 
         }
 
-        private void employesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.employesBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDB56Projet2GSDataSet);
-
-        }
-
         private void btnAjout_Click(object sender, EventArgs e)
         {
             AjoutEmp ajoutEmp = new AjoutEmp();
             this.Hide();
-            ajoutEmp.FormClosed += (s, args) => this.Show(); this.employesTableAdapter.Fill(this.bDB56Projet2GSDataSet.Employes); ;
-            ajoutEmp.Show();
+            ajoutEmp.ShowDialog();
+            this.employesTableAdapter.Fill(this.bDB56Projet2GSDataSet.Employes);
         }
 
         private void button1_Click(object sender, EventArgs e)
