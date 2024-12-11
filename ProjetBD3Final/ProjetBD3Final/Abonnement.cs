@@ -21,14 +21,6 @@ namespace ProjetBD3Final
             InitializeComponent();
         }
 
-        private void abonnementsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.abonnementsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDB56Projet2GSDataSet);
-
-        }
-
         private void Abonnement_Load(object sender, EventArgs e)
         {
             // TODO: cette ligne de code charge les données dans la table 'bDB56Projet2GSDataSet.TypesAbonnement'. Vous pouvez la déplacer ou la supprimer selon les besoins.
@@ -37,9 +29,6 @@ namespace ProjetBD3Final
             this.typesAbonnementTableAdapter.Fill(this.bDB56Projet2GSDataSet.TypesAbonnement);
             // TODO: cette ligne de code charge les données dans la table 'bDB56Projet2GSDataSet.Provinces'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.provincesTableAdapter.Fill(this.bDB56Projet2GSDataSet.Provinces);
-            // TODO: cette ligne de code charge les données dans la table 'bDB56Projet2GSDataSet.Abonnements'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.abonnementsTableAdapter.Fill(this.bDB56Projet2GSDataSet.Abonnements);
-
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)

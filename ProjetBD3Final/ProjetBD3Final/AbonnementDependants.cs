@@ -28,17 +28,9 @@ namespace ProjetBD3Final
             }
         }
 
-        private void dependantsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.dependantsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDB56Projet2GSDataSet);
-        }
-
         private void AbonnementConjoint_Load(object sender, EventArgs e)
         {
-            // TODO: cette ligne de code charge les données dans la table 'bDB56Projet2GSDataSet.Dependants'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.dependantsTableAdapter.Fill(this.bDB56Projet2GSDataSet.Dependants);
+            
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
